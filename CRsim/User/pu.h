@@ -18,7 +18,10 @@ public:
     int chanOfEachTimeSlot[TOTAL_TIME_SLOT+10];//equal to -1 if pu is inactive
     bool ifTransmitting;
     
-    void getTrafficOfEachTimeSlot();
+    void initTrafficOfEachTimeSlot();
+    void initLocationRandom();
+    
+    PU();
 };
 
 #endif /* defined(__CRsim__pu__) */

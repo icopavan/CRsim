@@ -7,9 +7,20 @@
 //
 
 #include "pu.h"
+#include "debug.h"
 
-void PU::getTrafficOfEachTimeSlot()
+PU::PU()
 {
+    initAllPkt(PKT_ARR_RATE_PU, PKT_MAX_LEN_PU);
+    initTrafficOfEachTimeSlot();
+    initLocationRandom();
+}
+
+void PU::initTrafficOfEachTimeSlot()
+{
+//    for(int i = 0; i < allDataPkt.size(); i++){
+//        cout<<allDataPkt[i].len<<' ';
+//    }
     while(!pktTransQueue.empty()){
         pktTransQueue.pop();
     }
@@ -22,10 +33,13 @@ void PU::getTrafficOfEachTimeSlot()
         if(ifTransmitting){
             chanOfEachTimeSlot[t] = pktTransQueue.front().onWhichChan;
         }
-        cout<<chanOfEachTimeSlot[t]<<' '<<ifTransmitting<<endl;
-        if(cur < allDataPkt.size() && t == allDataPkt[cur].arrivalTimeSlot){
+        if(ifTransmitting){
+//            cout<<t<<' '<<chanOfEachTimeSlot[t]<<endl;
+        }
+        if(cur < allDataPkt.size() && t >= allDataPkt[cur].arrivalTimeSlot){
             pktTransQueue.push(allDataPkt[cur]);
             cur++;
+//            cout<<cur<<endl;
         }
         if(ifTransmitting == false && !pktTransQueue.empty()){
             ifTransmitting = true;
@@ -35,8 +49,16 @@ void PU::getTrafficOfEachTimeSlot()
             chanOfEachTimeSlot[t] = tmp;
         }
         if(ifTransmitting == true && t - pktTransQueue.front().startTransTimeSlot >= pktTransQueue.front().len - 1){
+//            cout<<t<<endl;
             ifTransmitting = false;
             pktTransQueue.pop();
         }
     }
+}
+
+void PU::initLocationRandom()
+{
+    int x = my_randint(0, SIDE_LENGTH);
+    int y = my_randint(0, SIDE_LENGTH);
+    location = make_pair((double)x, (double)y);
 }

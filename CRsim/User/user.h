@@ -16,7 +16,7 @@
 
 class User{
 public:
-    vector<double> loc;
+    pair<double, double> location;
     vI allChan;
     vI avaiChan;
     vector<DataPacket> allDataPkt;
@@ -34,7 +34,8 @@ public:
     double cur_sys_t;//current system time
     double pktArrivalRate;
     int curSysTimeSlot;//current system time slot
-    vI neighbors; //neighbors
+    vI neighborPU; //neighbors
+    vI neighborSU; //neighbors
     double transRange; //transmission range
     double transPower; //power,
     

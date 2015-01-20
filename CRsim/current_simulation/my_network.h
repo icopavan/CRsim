@@ -30,7 +30,6 @@ public:
     int ifRendezvous1;
     int ifRendezvous2;
     vector<MySU> jsSu;
-    vector<MySU> jsSu2;
     
     void initAllSU();
     void initAllPU();
@@ -39,6 +38,7 @@ public:
     void initSuNeighbor(int _id);
     void initAllSuNeighbors();
     
+    MyNetwork();
     virtual void startSimulation();
 };
 

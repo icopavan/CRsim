@@ -9,13 +9,17 @@
 #ifndef CRsim_global_h
 #define CRsim_global_h
 
-const int   TOTAL_CHAN_NUM  = 30; // total number of channels in the whole spectrum
+const int   TOTAL_CHAN_NUM  = 20; // total number of channels in the whole spectrum
 
 const int   SU_NUM  = 2; //number of SUs
 
 const int   CR_NUM = 4; //number of cognitive radio of SU
 
 const int   PU_NUM  = 30; //number of PUs
+
+const double PKT_ARR_RATE_PU = 50; // pu packet arrival rate
+
+const int PKT_MAX_LEN_PU =  20; //packet size
 
 const int   TOTAL_TIME_SLOT  = 8000; //simulation time slots
 
@@ -33,11 +37,7 @@ const double EPS = 1e-7; // Precision of double number
 
 const int PKT_MAX_LEN_SU =  10; //packet size
 
-const int PKT_MAX_LEN_PU =  20; //packet size
-
 const double PKT_ARR_RATE_SU = 10; // su packet arrival rate
-
-const double PKT_ARR_RATE_PU = 10; // pu packet arrival rate
 
 const int SIDE_LENGTH = 200; //area side length
 

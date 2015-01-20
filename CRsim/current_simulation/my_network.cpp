@@ -8,63 +8,65 @@
 
 #include "my_network.h"
 
-void MyNetwork:: initSuNeighbor(int cur_id)
+MyNetwork:: MyNetwork()
 {
-    int n = (int)(SU_NUM * NEIGHBOR_RATIO);
-    set<int> s;
-    s.insert(cur_id);
-    while((int)s.size() < n+1){
-        int tmp = my_randint(1, SU_NUM);
-        while(s.find(tmp) != s.end()){
-            tmp = my_randint(1, SU_NUM);
-        }
-        s.insert(tmp);
-    }
-    set<int>::iterator it;
-    jsSu[cur_id].neighbors.clear();
-    for(it = s.begin(); it != s.end(); it++){
-        if((*it) != cur_id){
-            jsSu[cur_id].neighbors.push_back(*it);
-        }
+    initAllPU();
+    initAllSU();
+}
+
+void MyNetwork:: initAllPU()
+{
+    allPU.clear();
+    for(int i = 0; i < PU_NUM; i++){
+        PU p;
+        allPU.push_back(p);
     }
 }
 
-void MyNetwork:: initAllSuNeighbors()
+double dis(double x1, double y1, double x2, double y2)
 {
-    for(int i = 1; i <= SU_NUM; i++){
-        initSuNeighbor(i);
-//        printVector(jsSu[i].neighbors);
-    }
-    for(int i = 1; i <= SU_NUM; i++){
-        int n = (int)jsSu[i].neighbors.size();
-        for(int j = 0; j < n; j++){
-            int tmp = jsSu[i].neighbors[j];
-            bool flag = 0;
-            for(int k = 0; k < jsSu[tmp].neighbors.size(); k++){
-                if(jsSu[tmp].neighbors[k] == i){
-                    flag = 1;
-                    break;
-                }
-            }
-            if(!flag) jsSu[tmp].neighbors.push_back(i);
-        }
-    }
+    return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2);
 }
 
 void MyNetwork:: initAllSU()
 {
-    for(int i = 1; i <= suNum+2; i++){
-        MySU tmp;
-        tmp.ID = i;
-        tmp.curSysTimeSlot = my_randint(0, 100000);
-        for(int j = 1; j <= CR_NUM+2; j++){
-            CognitiveRadio tmp1;
-            tmp.allCR.push_back(tmp1);
+    MySU tmp;
+    tmp.location = make_pair(SIDE_LENGTH / 3.0, SIDE_LENGTH/3.0);
+    MySU tmp1;
+    tmp1.location = make_pair(SIDE_LENGTH*2.0/3.0, SIDE_LENGTH*2.0/3.0);
+    allSU.push_back(tmp);
+    allSU.push_back(tmp1);
+    for(int i = 0; i < 2; i++){
+        allSU[i].neighborPU.clear();
+        for(int j = 0; j < PU_NUM; j++){
+            if(dis(allSU[i].location.first, allSU[i].location.second, allPU[j].location.first, allPU[j].location.second) <= SENSE_RANGE_SU * SENSE_RANGE_SU){
+                allSU[i].neighborPU.push_back(j);
+            }
         }
-        jsSu.push_back(tmp);
     }
 }
 
 void MyNetwork::startSimulation()
 {
+    for(int t = 0; t < TOTAL_TIME_SLOT; t++){
+        cout<<"#############################################"<<endl;
+        for(int i = 0; i < 2; i++){
+            allSU[i].avaiChan.clear();
+            bool vis[TOTAL_CHAN_NUM] = {0};
+            for(int j = 0; j < allSU[i].neighborPU.size(); j++){
+                int n = allSU[i].neighborPU[j];
+                int c = allPU[n].chanOfEachTimeSlot[t];
+                if(c > 0){
+                    vis[c] = 1;
+                }
+            }
+            for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
+                if(!vis[j]){
+                    allSU[i].avaiChan.push_back(j);
+                }
+            }
+            cout<<t<<' '; printVector(allSU[i].avaiChan);
+        }
+        cout<<"#############################################"<<endl;
+    }
 }

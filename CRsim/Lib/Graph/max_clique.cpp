@@ -21,7 +21,7 @@ bool ifIsClique(GraphAdjMatrix g, vI x)
     return true;
 }
 
-extern void maxCliqueAdjMatrix(GraphAdjMatrix g, int n, vI &ans)
+void maxCliqueAdjMatrix(GraphAdjMatrix g, int n, vI &ans)
 {
     int m = 0;
     for(int i = 1; i < (1<<n); i++){
