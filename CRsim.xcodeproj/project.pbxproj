@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AB3E1FF19E4FF2900FF9C39 /* my_su.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3E1FB19E4FF2900FF9C39 /* my_su.cpp */; };
+		2AB3E20019E4FF2900FF9C39 /* my_network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3E1FD19E4FF2900FF9C39 /* my_network.cpp */; };
+		2ABB98CD19E239F80093EEFD /* user.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB98CC19E239F80093EEFD /* user.cpp */; };
+		2ABB98D019E23A050093EEFD /* my_split_spec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB98CE19E23A050093EEFD /* my_split_spec.cpp */; };
+		2ABB98F419E2828C0093EEFD /* network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB98F219E2828C0093EEFD /* network.cpp */; };
+		2ABB98F919E282A40093EEFD /* pu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB98F519E282A40093EEFD /* pu.cpp */; };
+		2ABB98FA19E282A40093EEFD /* su.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB98F719E282A40093EEFD /* su.cpp */; };
+		2ABD8B0019E0E9AC00EDC043 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8AED19E0E9AC00EDC043 /* main.cpp */; };
+		2ABD8B1619E0FEA600EDC043 /* my_seq.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B0E19E0FEA600EDC043 /* my_seq.cpp */; };
+		2ABD8B1719E0FEA600EDC043 /* chan_hop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B0F19E0FEA600EDC043 /* chan_hop.cpp */; };
+		2ABD8B1819E0FEA600EDC043 /* en_jump_stay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B1319E0FEA600EDC043 /* en_jump_stay.cpp */; };
+		2ABD8B1919E0FEA600EDC043 /* jump_stay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B1419E0FEA600EDC043 /* jump_stay.cpp */; };
+		2ABD8B2119E0FEC000EDC043 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B1B19E0FEC000EDC043 /* debug.cpp */; };
+		2ABD8B2219E0FEC000EDC043 /* my_fun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B1D19E0FEC000EDC043 /* my_fun.cpp */; };
+		2ABD8B2319E0FEC000EDC043 /* my_math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B2019E0FEC000EDC043 /* my_math.cpp */; };
+		2ACFCD3D1A37A923004929DE /* max_clique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD371A37A923004929DE /* max_clique.cpp */; };
+		2ACFCD3E1A37A923004929DE /* graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD391A37A923004929DE /* graph.cpp */; };
+		2ACFCD3F1A37A923004929DE /* max_flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD3A1A37A923004929DE /* max_flow.cpp */; };
+		2AFCEC6C1A09E08300E4C29E /* cognitive_radio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCEC6A1A09E08300E4C29E /* cognitive_radio.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A03C44119DF02A3007D6FF3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A03C44319DF02A3007D6FF3 /* CRsim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CRsim; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB3E1FB19E4FF2900FF9C39 /* my_su.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_su.cpp; path = CRsim/current_simulation/my_su.cpp; sourceTree = "<group>"; };
+		2AB3E1FC19E4FF2900FF9C39 /* my_su.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_su.h; path = CRsim/current_simulation/my_su.h; sourceTree = "<group>"; };
+		2AB3E1FD19E4FF2900FF9C39 /* my_network.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_network.cpp; path = CRsim/current_simulation/my_network.cpp; sourceTree = "<group>"; };
+		2AB3E1FE19E4FF2900FF9C39 /* my_network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_network.h; path = CRsim/current_simulation/my_network.h; sourceTree = "<group>"; };
+		2AB3E20219E4FF7200FF9C39 /* include.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = include.h; path = CRsim/Global/include.h; sourceTree = "<group>"; };
+		2AB3E20319E4FF7200FF9C39 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = global.h; path = CRsim/Global/global.h; sourceTree = "<group>"; };
+		2ABB98CB19E239F80093EEFD /* user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = user.h; path = CRsim/User/user.h; sourceTree = "<group>"; };
+		2ABB98CC19E239F80093EEFD /* user.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = user.cpp; path = CRsim/User/user.cpp; sourceTree = "<group>"; };
+		2ABB98CE19E23A050093EEFD /* my_split_spec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_split_spec.cpp; path = CRsim/ChanHop/my_split_spec.cpp; sourceTree = "<group>"; };
+		2ABB98CF19E23A050093EEFD /* my_split_spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_split_spec.h; path = CRsim/ChanHop/my_split_spec.h; sourceTree = "<group>"; };
+		2ABB98F219E2828C0093EEFD /* network.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = network.cpp; path = CRsim/Network/network.cpp; sourceTree = "<group>"; };
+		2ABB98F319E2828C0093EEFD /* network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = network.h; path = CRsim/Network/network.h; sourceTree = "<group>"; };
+		2ABB98F519E282A40093EEFD /* pu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pu.cpp; path = CRsim/User/pu.cpp; sourceTree = "<group>"; };
+		2ABB98F619E282A40093EEFD /* pu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pu.h; path = CRsim/User/pu.h; sourceTree = "<group>"; };
+		2ABB98F719E282A40093EEFD /* su.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = su.cpp; path = CRsim/User/su.cpp; sourceTree = "<group>"; };
+		2ABB98F819E282A40093EEFD /* su.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = su.h; path = CRsim/User/su.h; sourceTree = "<group>"; };
+		2ABD8AED19E0E9AC00EDC043 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = CRsim/main.cpp; sourceTree = "<group>"; };
+		2ABD8B0C19E0FEA600EDC043 /* jump_stay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jump_stay.h; path = CRsim/ChanHop/jump_stay.h; sourceTree = "<group>"; };
+		2ABD8B0D19E0FEA600EDC043 /* en_jump_stay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = en_jump_stay.h; path = CRsim/ChanHop/en_jump_stay.h; sourceTree = "<group>"; };
+		2ABD8B0E19E0FEA600EDC043 /* my_seq.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_seq.cpp; path = CRsim/ChanHop/my_seq.cpp; sourceTree = "<group>"; };
+		2ABD8B0F19E0FEA600EDC043 /* chan_hop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = chan_hop.cpp; path = CRsim/ChanHop/chan_hop.cpp; sourceTree = "<group>"; };
+		2ABD8B1019E0FEA600EDC043 /* my_seq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_seq.h; path = CRsim/ChanHop/my_seq.h; sourceTree = "<group>"; };
+		2ABD8B1119E0FEA600EDC043 /* chan_hop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = chan_hop.h; path = CRsim/ChanHop/chan_hop.h; sourceTree = "<group>"; };
+		2ABD8B1319E0FEA600EDC043 /* en_jump_stay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = en_jump_stay.cpp; path = CRsim/ChanHop/en_jump_stay.cpp; sourceTree = "<group>"; };
+		2ABD8B1419E0FEA600EDC043 /* jump_stay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jump_stay.cpp; path = CRsim/ChanHop/jump_stay.cpp; sourceTree = "<group>"; };
+		2ABD8B1B19E0FEC000EDC043 /* debug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = debug.cpp; path = CRsim/Lib/debug.cpp; sourceTree = "<group>"; };
+		2ABD8B1C19E0FEC000EDC043 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debug.h; path = CRsim/Lib/debug.h; sourceTree = "<group>"; };
+		2ABD8B1D19E0FEC000EDC043 /* my_fun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_fun.cpp; path = CRsim/Lib/my_fun.cpp; sourceTree = "<group>"; };
+		2ABD8B1E19E0FEC000EDC043 /* my_fun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_fun.h; path = CRsim/Lib/my_fun.h; sourceTree = "<group>"; };
+		2ABD8B1F19E0FEC000EDC043 /* my_math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_math.h; path = CRsim/Lib/my_math.h; sourceTree = "<group>"; };
+		2ABD8B2019E0FEC000EDC043 /* my_math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_math.cpp; path = CRsim/Lib/my_math.cpp; sourceTree = "<group>"; };
+		2ACFCD371A37A923004929DE /* max_clique.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = max_clique.cpp; path = CRsim/Lib/Graph/max_clique.cpp; sourceTree = "<group>"; };
+		2ACFCD381A37A923004929DE /* max_clique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = max_clique.h; path = CRsim/Lib/Graph/max_clique.h; sourceTree = "<group>"; };
+		2ACFCD391A37A923004929DE /* graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graph.cpp; path = CRsim/Lib/Graph/graph.cpp; sourceTree = "<group>"; };
+		2ACFCD3A1A37A923004929DE /* max_flow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = max_flow.cpp; path = CRsim/Lib/Graph/max_flow.cpp; sourceTree = "<group>"; };
+		2ACFCD3B1A37A923004929DE /* max_flow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = max_flow.h; path = CRsim/Lib/Graph/max_flow.h; sourceTree = "<group>"; };
+		2ACFCD3C1A37A923004929DE /* graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graph.h; path = CRsim/Lib/Graph/graph.h; sourceTree = "<group>"; };
+		2AFCEC6A1A09E08300E4C29E /* cognitive_radio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cognitive_radio.cpp; path = CRsim/User/cognitive_radio.cpp; sourceTree = "<group>"; };
+		2AFCEC6B1A09E08300E4C29E /* cognitive_radio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cognitive_radio.h; path = CRsim/User/cognitive_radio.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A03C44019DF02A3007D6FF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A03C43A19DF02A3007D6FF3 = {
+			isa = PBXGroup;
+			children = (
+				2ABD8AEB19E0E99C00EDC043 /* CRsim */,
+				2A03C44419DF02A3007D6FF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A03C44419DF02A3007D6FF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A03C44319DF02A3007D6FF3 /* CRsim */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AB3E1F419E4FE1A00FF9C39 /* CurSimulation */ = {
+			isa = PBXGroup;
+			children = (
+				2AB3E1FB19E4FF2900FF9C39 /* my_su.cpp */,
+				2AB3E1FC19E4FF2900FF9C39 /* my_su.h */,
+				2AB3E1FD19E4FF2900FF9C39 /* my_network.cpp */,
+				2AB3E1FE19E4FF2900FF9C39 /* my_network.h */,
+			);
+			name = CurSimulation;
+			sourceTree = "<group>";
+		};
+		2AB3E20119E4FF3900FF9C39 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				2AB3E20219E4FF7200FF9C39 /* include.h */,
+				2AB3E20319E4FF7200FF9C39 /* global.h */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		2ABB98EE19E282390093EEFD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2ABB98F219E2828C0093EEFD /* network.cpp */,
+				2ABB98F319E2828C0093EEFD /* network.h */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		2ABD8AEB19E0E99C00EDC043 /* CRsim */ = {
+			isa = PBXGroup;
+			children = (
+				2ABD8AED19E0E9AC00EDC043 /* main.cpp */,
+				2AB3E20119E4FF3900FF9C39 /* Global */,
+				2AB3E1F419E4FE1A00FF9C39 /* CurSimulation */,
+				2ABB98EE19E282390093EEFD /* Network */,
+				2ABD8B0B19E0FB0A00EDC043 /* User */,
+				2ABD8B0819E0E9CD00EDC043 /* ChanHop */,
+				2ABD8B0919E0EA1C00EDC043 /* lib */,
+			);
+			name = CRsim;
+			sourceTree = "<group>";
+		};
+		2ABD8B0819E0E9CD00EDC043 /* ChanHop */ = {
+			isa = PBXGroup;
+			children = (
+				2ABD8B0F19E0FEA600EDC043 /* chan_hop.cpp */,
+				2ABD8B1119E0FEA600EDC043 /* chan_hop.h */,
+				2ABD8B1319E0FEA600EDC043 /* en_jump_stay.cpp */,
+				2ABD8B0D19E0FEA600EDC043 /* en_jump_stay.h */,
+				2ABD8B1419E0FEA600EDC043 /* jump_stay.cpp */,
+				2ABD8B0C19E0FEA600EDC043 /* jump_stay.h */,
+				2ABD8B0E19E0FEA600EDC043 /* my_seq.cpp */,
+				2ABD8B1019E0FEA600EDC043 /* my_seq.h */,
+				2ABB98CE19E23A050093EEFD /* my_split_spec.cpp */,
+				2ABB98CF19E23A050093EEFD /* my_split_spec.h */,
+			);
+			name = ChanHop;
+			sourceTree = "<group>";
+		};
+		2ABD8B0919E0EA1C00EDC043 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2AFCEC641A0956B600E4C29E /* Graph */,
+				2ABD8B1B19E0FEC000EDC043 /* debug.cpp */,
+				2ABD8B1C19E0FEC000EDC043 /* debug.h */,
+				2ABD8B1D19E0FEC000EDC043 /* my_fun.cpp */,
+				2ABD8B1E19E0FEC000EDC043 /* my_fun.h */,
+				2ABD8B1F19E0FEC000EDC043 /* my_math.h */,
+				2ABD8B2019E0FEC000EDC043 /* my_math.cpp */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		2ABD8B0B19E0FB0A00EDC043 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2ABB98F519E282A40093EEFD /* pu.cpp */,
+				2ABB98F619E282A40093EEFD /* pu.h */,
+				2ABB98F719E282A40093EEFD /* su.cpp */,
+				2ABB98F819E282A40093EEFD /* su.h */,
+				2ABB98CB19E239F80093EEFD /* user.h */,
+				2ABB98CC19E239F80093EEFD /* user.cpp */,
+				2AFCEC6A1A09E08300E4C29E /* cognitive_radio.cpp */,
+				2AFCEC6B1A09E08300E4C29E /* cognitive_radio.h */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		2AFCEC641A0956B600E4C29E /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				2ACFCD371A37A923004929DE /* max_clique.cpp */,
+				2ACFCD381A37A923004929DE /* max_clique.h */,
+				2ACFCD3C1A37A923004929DE /* graph.h */,
+				2ACFCD391A37A923004929DE /* graph.cpp */,
+				2ACFCD3A1A37A923004929DE /* max_flow.cpp */,
+				2ACFCD3B1A37A923004929DE /* max_flow.h */,
+			);
+			name = Graph;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A03C44219DF02A3007D6FF3 /* CRsim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A03C44A19DF02A3007D6FF3 /* Build configuration list for PBXNativeTarget "CRsim" */;
+			buildPhases = (
+				2A03C43F19DF02A3007D6FF3 /* Sources */,
+				2A03C44019DF02A3007D6FF3 /* Frameworks */,
+				2A03C44119DF02A3007D6FF3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CRsim;
+			productName = CRsim;
+			productReference = 2A03C44319DF02A3007D6FF3 /* CRsim */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A03C43B19DF02A3007D6FF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = lj;
+				TargetAttributes = {
+					2A03C44219DF02A3007D6FF3 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 2A03C43E19DF02A3007D6FF3 /* Build configuration list for PBXProject "CRsim" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A03C43A19DF02A3007D6FF3;
+			productRefGroup = 2A03C44419DF02A3007D6FF3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A03C44219DF02A3007D6FF3 /* CRsim */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A03C43F19DF02A3007D6FF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AFCEC6C1A09E08300E4C29E /* cognitive_radio.cpp in Sources */,
+				2ABB98F919E282A40093EEFD /* pu.cpp in Sources */,
+				2ABD8B1719E0FEA600EDC043 /* chan_hop.cpp in Sources */,
+				2ABD8B2219E0FEC000EDC043 /* my_fun.cpp in Sources */,
+				2ACFCD3D1A37A923004929DE /* max_clique.cpp in Sources */,
+				2AB3E1FF19E4FF2900FF9C39 /* my_su.cpp in Sources */,
+				2ABD8B0019E0E9AC00EDC043 /* main.cpp in Sources */,
+				2ABD8B1919E0FEA600EDC043 /* jump_stay.cpp in Sources */,
+				2ABB98FA19E282A40093EEFD /* su.cpp in Sources */,
+				2ABD8B1619E0FEA600EDC043 /* my_seq.cpp in Sources */,
+				2ACFCD3F1A37A923004929DE /* max_flow.cpp in Sources */,
+				2ABD8B1819E0FEA600EDC043 /* en_jump_stay.cpp in Sources */,
+				2ABD8B2319E0FEC000EDC043 /* my_math.cpp in Sources */,
+				2ACFCD3E1A37A923004929DE /* graph.cpp in Sources */,
+				2ABB98D019E23A050093EEFD /* my_split_spec.cpp in Sources */,
+				2AB3E20019E4FF2900FF9C39 /* my_network.cpp in Sources */,
+				2ABB98F419E2828C0093EEFD /* network.cpp in Sources */,
+				2ABB98CD19E239F80093EEFD /* user.cpp in Sources */,
+				2ABD8B2119E0FEC000EDC043 /* debug.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2A03C44819DF02A3007D6FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2A03C44919DF02A3007D6FF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2A03C44B19DF02A3007D6FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2A03C44C19DF02A3007D6FF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A03C43E19DF02A3007D6FF3 /* Build configuration list for PBXProject "CRsim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A03C44819DF02A3007D6FF3 /* Debug */,
+				2A03C44919DF02A3007D6FF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A03C44A19DF02A3007D6FF3 /* Build configuration list for PBXNativeTarget "CRsim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A03C44B19DF02A3007D6FF3 /* Debug */,
+				2A03C44C19DF02A3007D6FF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A03C43B19DF02A3007D6FF3 /* Project object */;
+}

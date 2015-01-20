@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>598D1403-DEF5-4CE4-A51C-391DA2D7030F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CRsim</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>82A4E6D89E3891DF13D7D426C9B776200411A875</key>
+		<string>https://github.com/mightyvoice/CRsim.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CRsim.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>82A4E6D89E3891DF13D7D426C9B776200411A875</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mightyvoice/CRsim.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>82A4E6D89E3891DF13D7D426C9B776200411A875</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>82A4E6D89E3891DF13D7D426C9B776200411A875</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CRsim</string>
+		</dict>
+	</array>
+</dict>
+</plist>
