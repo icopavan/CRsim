@@ -25,7 +25,6 @@ public:
     int puNum;
     
     CRNetwork();
-    void initPktTimeExp();
-    void startSimulation();
+    virtual void startSimulation();
 };
 #endif /* defined(__CRsim__network__) */

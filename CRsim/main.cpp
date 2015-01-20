@@ -19,17 +19,16 @@
 #include "my_su.h"
 #include "graph.h"
 #include "max_flow.h"
-
-class AA{
-public:
-    int shit;
-    void prints(){ cout<<"shit"<<endl; }
-    AA(int n){ shit = n; }
-};
+#include "user.h"
 
 int main(int argc, const char * argv[]) {
-    MyNetwork my;
-    my.startSimulation();
-    printShit();
+//    MyNetwork my;
+//    my.startSimulation();
+    PU p;
+    p.initAllPkt(PKT_ARR_RATE_PU, PKT_MAX_LEN_PU);
+    for(int i = 0; i < p.allDataPkt.size(); i++){
+//        cout<<p.allDataPkt[i].ID<<' '<<p.allDataPkt[i].arrivalTimeSlot<<' '<<p.allDataPkt[i].len<<endl;
+    }
+    p.getTrafficOfEachTimeSlot();
     return  0;
 }

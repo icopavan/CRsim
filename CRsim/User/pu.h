@@ -15,6 +15,10 @@
 class PU: public User{
 public:
     int licensedChan;
+    int chanOfEachTimeSlot[TOTAL_TIME_SLOT+10];//equal to -1 if pu is inactive
+    bool ifTransmitting;
+    
+    void getTrafficOfEachTimeSlot();
 };
 
 #endif /* defined(__CRsim__pu__) */

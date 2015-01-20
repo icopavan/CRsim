@@ -11,8 +11,12 @@
 
 #include "include.h"
 
+extern int my_rand();
+
 /* generate a random number in [start, end] */
 extern int my_randint(int start, int end);
+
+extern double myRandomExp(double _lambda);
 
 extern int binaryStringToInt(string x);
 

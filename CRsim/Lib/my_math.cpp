@@ -32,6 +32,19 @@ int my_randint(int start, int end)
     return start + ans;
 }
 
+double myRandomExp(double _lambda)
+{
+    double u = 0.0;
+    while(1){
+        u = (double)my_rand()/(double)RAND_MAX;
+        if(1.0 - u >= 1e-6){
+            break;
+        }
+    }
+    u = (-1.0/_lambda) * log(1.0-u);
+    return u;
+}
+
 int binaryStringToInt(string x)
 {
     int ans = 0;

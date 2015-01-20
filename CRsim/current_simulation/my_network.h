@@ -31,9 +31,7 @@ public:
     int ifRendezvous2;
     vector<MySU> jsSu;
     vector<MySU> jsSu2;
-    MyNetwork();
     
-    void initChanSegment();
     void initAllSU();
     void initAllPU();
     void initSuChanHop();
@@ -41,16 +39,7 @@ public:
     void initSuNeighbor(int _id);
     void initAllSuNeighbors();
     
-    void initFirstAlgorithmJs();
-    void firstAlgorithmJs();
-    void initSecondAlgorithmJs();
-    void secondAlgorithmJsFirstVersion();
-    void secondAlgorithmJs();
-    void initThirdAlgorithmJs();
-    void thirdAlgorithmJs();
-    void theRandomAlgorithm();
-    
-    void startSimulation();
+    virtual void startSimulation();
 };
 
 #endif /* defined(__CRsim__my_network__) */

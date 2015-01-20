@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AA387351A6EB35900389AD6 /* packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA387331A6EB35900389AD6 /* packet.cpp */; };
 		2AB3E1FF19E4FF2900FF9C39 /* my_su.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3E1FB19E4FF2900FF9C39 /* my_su.cpp */; };
 		2AB3E20019E4FF2900FF9C39 /* my_network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3E1FD19E4FF2900FF9C39 /* my_network.cpp */; };
 		2ABB98CD19E239F80093EEFD /* user.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB98CC19E239F80093EEFD /* user.cpp */; };
@@ -42,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		2A03C44319DF02A3007D6FF3 /* CRsim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CRsim; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA387331A6EB35900389AD6 /* packet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = packet.cpp; path = CRsim/Network/packet.cpp; sourceTree = "<group>"; };
+		2AA387341A6EB35900389AD6 /* packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = packet.h; path = CRsim/Network/packet.h; sourceTree = "<group>"; };
 		2AB3E1FB19E4FF2900FF9C39 /* my_su.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_su.cpp; path = CRsim/current_simulation/my_su.cpp; sourceTree = "<group>"; };
 		2AB3E1FC19E4FF2900FF9C39 /* my_su.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_su.h; path = CRsim/current_simulation/my_su.h; sourceTree = "<group>"; };
 		2AB3E1FD19E4FF2900FF9C39 /* my_network.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_network.cpp; path = CRsim/current_simulation/my_network.cpp; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 			children = (
 				2ABB98F219E2828C0093EEFD /* network.cpp */,
 				2ABB98F319E2828C0093EEFD /* network.h */,
+				2AA387331A6EB35900389AD6 /* packet.cpp */,
+				2AA387341A6EB35900389AD6 /* packet.h */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				2ABB98FA19E282A40093EEFD /* su.cpp in Sources */,
 				2ABD8B1619E0FEA600EDC043 /* my_seq.cpp in Sources */,
 				2ACFCD3F1A37A923004929DE /* max_flow.cpp in Sources */,
+				2AA387351A6EB35900389AD6 /* packet.cpp in Sources */,
 				2ABD8B1819E0FEA600EDC043 /* en_jump_stay.cpp in Sources */,
 				2ABD8B2319E0FEC000EDC043 /* my_math.cpp in Sources */,
 				2ACFCD3E1A37A923004929DE /* graph.cpp in Sources */,

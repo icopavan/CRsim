@@ -56,7 +56,6 @@ typedef set<int>::iterator sI_it;
 #define F0(i, n) for( int (i) = 0; (i) < (n); (i)++)
 #define F1(i, n) for( int (i) = 1; (i) <= (n); (i)++)
 
-const double EPS = 1e-9;
 const double PI = acos(-1.0);
 const int ioo = (~0)-(1<<31);
 const LL loo = (~(LL)0)-((LL)1<<63);//
