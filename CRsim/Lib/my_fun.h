@@ -41,4 +41,8 @@ extern void binaryRepresent(int n, int l, int ans[]);
 /*copy elements in a to vector b*/
 extern void vectorCopy(vI &a, vI &b);
 
+extern vI getComFromTwoVector(vI x, vI y);
+
+extern void arrayCopyFrom0(int a[], int b[], int n); // copy a to b with n elements;
+
 #endif /* defined(__CRsim__my_fun__) */

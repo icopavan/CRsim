@@ -21,9 +21,17 @@
 #include "max_flow.h"
 #include "user.h"
 
+extern double totalAnswer1;
+extern double totalAnswer2;
+extern double totalAnswer3;
+
 int main(int argc, const char * argv[]) {
-    MyNetwork my;
-    my.startSimulation();
+    for(int i = 0; i < SIMULATION_REPEAT_TIME; i++){
+        MyNetwork my;
+        my.startSimulation();
+    }
+//    cout<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
     return  0;
 }
 

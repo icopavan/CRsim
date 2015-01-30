@@ -18,9 +18,6 @@ PU::PU()
 
 void PU::initTrafficOfEachTimeSlot()
 {
-//    for(int i = 0; i < allDataPkt.size(); i++){
-//        cout<<allDataPkt[i].len<<' ';
-//    }
     while(!pktTransQueue.empty()){
         pktTransQueue.pop();
     }
@@ -33,27 +30,52 @@ void PU::initTrafficOfEachTimeSlot()
         if(ifTransmitting){
             chanOfEachTimeSlot[t] = pktTransQueue.front().onWhichChan;
         }
-        if(ifTransmitting){
-//            cout<<t<<' '<<chanOfEachTimeSlot[t]<<endl;
-        }
         if(cur < allDataPkt.size() && t >= allDataPkt[cur].arrivalTimeSlot){
             pktTransQueue.push(allDataPkt[cur]);
             cur++;
-//            cout<<cur<<endl;
         }
         if(ifTransmitting == false && !pktTransQueue.empty()){
             ifTransmitting = true;
             pktTransQueue.front().startTransTimeSlot = t;
-            int tmp = my_randint(1, TOTAL_CHAN_NUM);
-            pktTransQueue.front().onWhichChan = tmp;
-            chanOfEachTimeSlot[t] = tmp;
+            int tmp_chan = getChanUnUsed();
+            pktTransQueue.front().onWhichChan = tmp_chan;
+            chanOfEachTimeSlot[t] = tmp_chan;
+            curStayChan = tmp_chan;
         }
         if(ifTransmitting == true && t - pktTransQueue.front().startTransTimeSlot >= pktTransQueue.front().len - 1){
-//            cout<<t<<endl;
             ifTransmitting = false;
             pktTransQueue.pop();
+            returnAllocChan(curStayChan);
         }
     }
+}
+
+int PU:: getChanRandom()
+{
+    int tmp_chan = my_randint(1, TOTAL_CHAN_NUM);
+    ChanAllocToPuCount[tmp_chan]++;
+    return tmp_chan;
+}
+
+int PU:: getChanUnUsed()
+{
+    if(AvaiChanNumForPU > 0){
+        while(true){
+            int tmp = my_randint(1, TOTAL_CHAN_NUM);
+            if(ChanAllocToPuCount[tmp] == 0){
+                ChanAllocToPuCount[tmp]++;
+                AvaiChanNumForPU--;
+                return tmp;
+            }
+        }
+    }
+    return 0;
+}
+
+void PU:: returnAllocChan(int _chan_id)
+{
+    ChanAllocToPuCount[_chan_id]--;
+    AvaiChanNumForPU++;
 }
 
 void PU::initLocationRandom()

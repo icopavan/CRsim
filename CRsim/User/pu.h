@@ -21,6 +21,10 @@ public:
     void initTrafficOfEachTimeSlot();
     void initLocationRandom();
     
+    int getChanRandom();
+    int getChanUnUsed();
+    void returnAllocChan(int _chan_id);
+    
     PU();
 };
 

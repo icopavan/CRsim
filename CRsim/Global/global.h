@@ -11,23 +11,23 @@
 
 const int   TOTAL_CHAN_NUM  = 20; // total number of channels in the whole spectrum
 
-const int   SU_NUM  = 2; //number of SUs
+const int   SU_NUM  = 6; //number of SUs
 
 const int   CR_NUM = 4; //number of cognitive radio of SU
 
-const int   PU_NUM  = 30; //number of PUs
+const int   PU_NUM  = 20; //number of PUs
 
-const double PKT_ARR_RATE_PU = 50; // pu packet arrival rate
+const double PKT_ARR_RATE_PU = 10; // pu packet arrival rate
 
-const int PKT_MAX_LEN_PU =  20; //packet size
+const int PKT_MAX_LEN_PU =  100; //packet size
 
-const int   TOTAL_TIME_SLOT  = 8000; //simulation time slots
+const int   SIMULATION_REPEAT_TIME = 1;
+
+const int   TOTAL_TIME_SLOT  = 800000; //simulation time slots
 
 const double   TIME_SLOT_LEN  = 0.002; //length of each time slot
 
 const double   CHAN_AVAI_RATIO = 0.5; //channel available ration of each SU
-
-const int   SIMULATION_REPEAT_TIME = 100;
 
 const double   NEIGHBOR_RATIO = 0.5; //channel available ration of each SU
 
@@ -42,6 +42,12 @@ const double PKT_ARR_RATE_SU = 10; // su packet arrival rate
 const int SIDE_LENGTH = 200; //area side length
 
 const double SENSE_RANGE_SU = 100; // sensing range of SU
+
+///////////////////////////////////////////////////////////////////////////////////
+
+static int ChanAllocToPuCount[TOTAL_CHAN_NUM+5];
+
+static int AvaiChanNumForPU;
 
 #define   Tran_Range   100//transmission range
 

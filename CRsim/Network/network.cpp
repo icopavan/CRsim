@@ -14,7 +14,10 @@ CRNetwork::CRNetwork()
     this->suNum = SU_NUM;
     this->simTimeSlot = TOTAL_TIME_SLOT;
     this->timeslotLength  = TIME_SLOT_LEN;
+    memset(ChanAllocToPuCount, 0, sizeof(ChanAllocToPuCount));
+    AvaiChanNumForPU = TOTAL_CHAN_NUM;
 }
+
 
 void CRNetwork:: startSimulation()
 {

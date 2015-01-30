@@ -146,3 +146,28 @@ bool vectorFindFrom0(const vI &a, int x)
     }
     return  false;
 }
+
+vI getComFromTwoVector(vI x, vI y)
+{
+    vI ans;
+    for(int i = 0; i < x.size(); i++){
+        bool flag = 0;
+        for(int j = 0; j < y.size(); j++){
+            if(x[i] == y[j]){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 1){
+            ans.push_back(x[i]);
+        }
+    }
+    return ans;
+}
+
+void arrayCopyFrom0(int a[], int b[], int n)
+{
+    for(int i = 0; i < n; i++){
+        a[i] = b[i];
+    }
+}

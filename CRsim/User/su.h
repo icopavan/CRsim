@@ -18,6 +18,11 @@
 class SU: public User{
 public:
     vector<CognitiveRadio> allCR;
+    int chanAvaiTimeCount[TOTAL_CHAN_NUM+5];
+    int chanAvaiTimeTotal[TOTAL_CHAN_NUM+5];
+    int chanCurTotalAvaiTime[TOTAL_CHAN_NUM+5];
+    int chanAvaiRoundCount[TOTAL_CHAN_NUM+5];
+    int chanUsedTimeCount[TOTAL_CHAN_NUM+5];
     
     vI getAvaiChanRandom(int _chan_n);
     vI getAvaiChanRandom();
