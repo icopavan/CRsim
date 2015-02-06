@@ -12,6 +12,7 @@
 #include "include.h"
 #include "su.h"
 #include "pu.h"
+#include "debug.h"
 
 class CRNetwork{
 public:
@@ -23,6 +24,15 @@ public:
     int simTimeSlot;
     int suNum;
     int puNum;
+    int chanAllocToPuCount[TOTAL_CHAN_NUM+5];
+    int avaiChanNumForPU;
+    
+    void initAllPU();
+    void initAllPuTrafficEachTime();
+    virtual void initAllSU();
+    int allocChanRandomToPU();
+    int allocChanUnUsedToPU();
+    void puReturnAllocChan(int _chan_id);
     
     CRNetwork();
     virtual void startSimulation();

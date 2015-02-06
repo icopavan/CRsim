@@ -15,15 +15,12 @@
 class PU: public User{
 public:
     int licensedChan;
+    int curComePktID;
     int chanOfEachTimeSlot[TOTAL_TIME_SLOT+10];//equal to -1 if pu is inactive
     bool ifTransmitting;
+
     
-    void initTrafficOfEachTimeSlot();
     void initLocationRandom();
-    
-    int getChanRandom();
-    int getChanUnUsed();
-    void returnAllocChan(int _chan_id);
     
     PU();
 };

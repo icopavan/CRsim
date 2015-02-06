@@ -25,11 +25,15 @@ extern double totalAnswer1;
 extern double totalAnswer2;
 extern double totalAnswer3;
 
+extern double total_cal;
+extern double total_mea;
 int main(int argc, const char * argv[]) {
     for(int i = 0; i < SIMULATION_REPEAT_TIME; i++){
         MyNetwork my;
         my.startSimulation();
     }
+    cout<<"Aver cal: "<<total_cal/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"Aver mea: "<<total_mea/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
     return  0;

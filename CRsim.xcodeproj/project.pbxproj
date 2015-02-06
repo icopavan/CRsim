@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2A03C44319DF02A3007D6FF3 /* CRsim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CRsim; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6DD6691A80172E000D079E /* configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = configure.h; path = CRsim/Global/configure.h; sourceTree = "<group>"; };
 		2AA387331A6EB35900389AD6 /* packet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = packet.cpp; path = CRsim/Network/packet.cpp; sourceTree = "<group>"; };
 		2AA387341A6EB35900389AD6 /* packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = packet.h; path = CRsim/Network/packet.h; sourceTree = "<group>"; };
 		2AB3E1FB19E4FF2900FF9C39 /* my_su.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_su.cpp; path = CRsim/current_simulation/my_su.cpp; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 			children = (
 				2AB3E20219E4FF7200FF9C39 /* include.h */,
 				2AB3E20319E4FF7200FF9C39 /* global.h */,
+				2A6DD6691A80172E000D079E /* configure.h */,
 			);
 			name = Global;
 			sourceTree = "<group>";

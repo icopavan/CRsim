@@ -34,6 +34,7 @@ int my_randint(int start, int end)
 
 double myRandomExp(double _lambda)
 {
+    if(_lambda <= EPS) return INT_MAX_VAL;
     double u = 0.0;
     while(1){
         u = (double)my_rand()/(double)RAND_MAX;
@@ -89,3 +90,24 @@ string intToBinaryString(int x, int n)
     while(ans.length() < n) ans += '0';
     return ans;
 }
+
+double disTwoPoint(double x1, double y1, double x2, double y2)
+{
+    return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2);
+}
+
+double myNchooseM(int n, int m)
+{
+    if(m >= n) return 0;
+    if(m == 0) return 1;
+    double dp[105][105]= {0};
+    dp[0][0] = 1;
+    for(int i = 1; i <= n; i++) dp[i][i] = dp[i][0] = 1;
+    for(int i = 2; i <= n; i++){
+        for(int j = 1; j <= i; j++){
+            dp[i][j] = dp[i-1][j] + dp[i-1][j-1];
+        }
+    }
+    return dp[n][m];
+}
+

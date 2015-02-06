@@ -28,6 +28,7 @@
 #include <bitset>
 
 #include "global.h"
+#include "configure.h"
 
 using namespace std;
 

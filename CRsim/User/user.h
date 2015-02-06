@@ -41,6 +41,7 @@ public:
     
     ChanHop *chanHop;
     
+    void printPktInterval();
     void initAllPktArrivalTime(double arrRate);
     void initAllPkt(double arrRate, int pkt_max_len);
 };

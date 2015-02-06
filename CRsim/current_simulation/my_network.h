@@ -31,12 +31,16 @@ public:
     int ifRendezvous2;
     vector<MySU> jsSu;
     
-    void initAllSU();
-    void initAllPU();
+    virtual void initAllSU();
     void initSuChanHop();
     void initSuAvaiChan();
     void initSuNeighbor(int _id);
     void initAllSuNeighbors();
+    void jumpStay(int t);
+    void jumpStayRadomRep(int t);
+    void getSUsCurAvaiChan(int t);
+    void printConAvaiTime();
+    void calAverConAvaiTime();
     
     MyNetwork();
     virtual void startSimulation();
