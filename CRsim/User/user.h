@@ -13,6 +13,7 @@
 #include "chan_hop.h"
 #include "my_math.h"
 #include "packet.h"
+#include "channel.h"
 
 class User{
 public:

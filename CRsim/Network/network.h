@@ -35,6 +35,7 @@ public:
     void puReturnAllocChan(int _chan_id);
     
     CRNetwork();
+    virtual void initSimulation();
     virtual void startSimulation();
 };
 #endif /* defined(__CRsim__network__) */

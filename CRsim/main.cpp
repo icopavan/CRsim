@@ -27,15 +27,18 @@ extern double totalAnswer3;
 
 extern double total_cal;
 extern double total_mea;
+
 int main(int argc, const char * argv[]) {
+    totalAnswer1 = totalAnswer2 = totalAnswer3 = 0;
     for(int i = 0; i < SIMULATION_REPEAT_TIME; i++){
         MyNetwork my;
+//        cout<<"#######################"<<endl;
         my.startSimulation();
+        cout<<i<<endl;
+//        cout<<"#######################"<<endl<<endl;
     }
-    cout<<"Aver cal: "<<total_cal/SIMULATION_REPEAT_TIME<<endl;
-    cout<<"Aver mea: "<<total_mea/SIMULATION_REPEAT_TIME<<endl;
-//    cout<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
-//    cout<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"Random rep rend time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"Random rep with random sense rend time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
     return  0;
 }
 

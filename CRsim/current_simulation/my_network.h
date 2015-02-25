@@ -38,11 +38,15 @@ public:
     void initAllSuNeighbors();
     void jumpStay(int t);
     void jumpStayRadomRep(int t);
+    void jumpStayRandomRepRandomSense(int t);
+    void jumpStayKeepRep(int t);
     void getSUsCurAvaiChan(int t);
     void printConAvaiTime();
     void calAverConAvaiTime();
+    void getCurAllChanConAvaiTime();
     
     MyNetwork();
+    virtual void initSimulation();
     virtual void startSimulation();
 };
 

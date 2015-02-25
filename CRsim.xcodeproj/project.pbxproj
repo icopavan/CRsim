@@ -23,6 +23,7 @@
 		2ABD8B2119E0FEC000EDC043 /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B1B19E0FEC000EDC043 /* debug.cpp */; };
 		2ABD8B2219E0FEC000EDC043 /* my_fun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B1D19E0FEC000EDC043 /* my_fun.cpp */; };
 		2ABD8B2319E0FEC000EDC043 /* my_math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD8B2019E0FEC000EDC043 /* my_math.cpp */; };
+		2ACFB6BB1A9DAC60002E399B /* channel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFB6B91A9DAC60002E399B /* channel.cpp */; };
 		2ACFCD3D1A37A923004929DE /* max_clique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD371A37A923004929DE /* max_clique.cpp */; };
 		2ACFCD3E1A37A923004929DE /* graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD391A37A923004929DE /* graph.cpp */; };
 		2ACFCD3F1A37A923004929DE /* max_flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD3A1A37A923004929DE /* max_flow.cpp */; };
@@ -77,6 +78,8 @@
 		2ABD8B1E19E0FEC000EDC043 /* my_fun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_fun.h; path = CRsim/Lib/my_fun.h; sourceTree = "<group>"; };
 		2ABD8B1F19E0FEC000EDC043 /* my_math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = my_math.h; path = CRsim/Lib/my_math.h; sourceTree = "<group>"; };
 		2ABD8B2019E0FEC000EDC043 /* my_math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = my_math.cpp; path = CRsim/Lib/my_math.cpp; sourceTree = "<group>"; };
+		2ACFB6B91A9DAC60002E399B /* channel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = channel.cpp; path = CRsim/Network/channel.cpp; sourceTree = "<group>"; };
+		2ACFB6BA1A9DAC60002E399B /* channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = channel.h; path = CRsim/Network/channel.h; sourceTree = "<group>"; };
 		2ACFCD371A37A923004929DE /* max_clique.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = max_clique.cpp; path = CRsim/Lib/Graph/max_clique.cpp; sourceTree = "<group>"; };
 		2ACFCD381A37A923004929DE /* max_clique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = max_clique.h; path = CRsim/Lib/Graph/max_clique.h; sourceTree = "<group>"; };
 		2ACFCD391A37A923004929DE /* graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graph.cpp; path = CRsim/Lib/Graph/graph.cpp; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				2ABB98F319E2828C0093EEFD /* network.h */,
 				2AA387331A6EB35900389AD6 /* packet.cpp */,
 				2AA387341A6EB35900389AD6 /* packet.h */,
+				2ACFB6B91A9DAC60002E399B /* channel.cpp */,
+				2ACFB6BA1A9DAC60002E399B /* channel.h */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				2ABB98D019E23A050093EEFD /* my_split_spec.cpp in Sources */,
 				2AB3E20019E4FF2900FF9C39 /* my_network.cpp in Sources */,
 				2ABB98F419E2828C0093EEFD /* network.cpp in Sources */,
+				2ACFB6BB1A9DAC60002E399B /* channel.cpp in Sources */,
 				2ABB98CD19E239F80093EEFD /* user.cpp in Sources */,
 				2ABD8B2119E0FEC000EDC043 /* debug.cpp in Sources */,
 			);

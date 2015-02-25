@@ -107,6 +107,10 @@ void CRNetwork:: initAllSU()
 {
 }
 
+void CRNetwork:: initSimulation()
+{
+    
+}
 void CRNetwork:: startSimulation()
 {
     
