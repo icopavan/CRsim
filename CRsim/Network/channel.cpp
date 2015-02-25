@@ -8,10 +8,17 @@
 
 #include "channel.h"
 
-class CRchannel{
-public:
-    int id;
-    int curConAvaiTime;
-    bool ifAvai;
-
+bool cmpID(const CRchannel &x, const CRchannel &y)
+{
+    return x.ID < y.ID;
 };
+
+bool cmpConAvaiTime(const CRchannel &x, const CRchannel &y)
+{
+    return x.curConAvaiTime < y.curConAvaiTime;
+};
+
+bool cmpConAvaiTimeReverse(const CRchannel &x, const CRchannel &y)
+{
+    return x.curConAvaiTime > y.curConAvaiTime;
+}

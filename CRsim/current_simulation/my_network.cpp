@@ -10,6 +10,24 @@
 
 double total_cal = 0;
 double total_mea = 0;
+double totalAnswer1 = 0.0;
+double totalAnswer2 = 0.0;
+double totalAnswer3 = 0.0;
+bool rendSuc = 1;
+bool rendSucRand = 1;
+bool rendSucKeep = 1;
+bool rendSucRandSense = 1;
+const   int START_REND_TIME = my_randint(1, TOTAL_TIME_SLOT/10);
+const int countChannelID = TOTAL_CHAN_NUM/2; //which channel to count the continuous available time slot;
+bool preAvai[SU_NUM+2][TOTAL_CHAN_NUM+5] = {1};
+vI countAvaiTimeSlot;
+const int KEEP_TIME = 2;
+double totalRatio = 0;
+double totalSURatio = 0;
+double SU0avai = 0;
+double SU1avai = 0;
+double SU0SU1avai = 0;
+double SU0SU1notAvai = 0;
 
 MyNetwork:: MyNetwork() : CRNetwork()
 {
@@ -34,23 +52,16 @@ void MyNetwork:: initAllSU()
                 tmp.neighborPU.push_back(j);
             }
         }
+        for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
+            tmp.allChanObj[j].ID = j;
+            tmp.allChanObj[j].ifAvai = 0;
+            tmp.allChanObj[j].curConAvaiTime = 0;
+        }
         allSU.push_back(tmp);
     }
     allSU.push_back(allSU[0]);
     allSU.push_back(allSU[1]);
 }
-
-double totalAnswer1 = 0.0;
-double totalAnswer2 = 0.0;
-double totalAnswer3 = 0.0;
-bool rendSuc = 1;
-bool rendSucRand = 1;
-bool rendSucKeep = 1;
-bool rendSucRandSense = 1;
-const   int START_REND_TIME = my_randint(1, TOTAL_TIME_SLOT/10);
-const int countChannelID = TOTAL_CHAN_NUM/2; //which channel to count the continuous available time slot;
-bool preAvai[SU_NUM+2][TOTAL_CHAN_NUM+5] = {1};
-vI countAvaiTimeSlot;
 
 void MyNetwork:: getSUsCurAvaiChan(int t)
 {
@@ -72,6 +83,7 @@ void MyNetwork:: getSUsCurAvaiChan(int t)
         for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
             if(avai[j] == true){
                 su.avaiChan.push_back(j);
+                su.allChanObj[j].ifAvai = true;
                 if(preAvai[i][j] == false){
                     su.chanAvaiRoundCount[j]++;
                 }
@@ -85,6 +97,7 @@ void MyNetwork:: getSUsCurAvaiChan(int t)
                 }
             }
             if(avai[j] == false){
+                su.allChanObj[j].ifAvai = false;
                 if(preAvai[i][j] == true){
                     if(i == 0 && j == countChannelID){
                         countAvaiTimeSlot.push_back(su.chanCurTotalAvaiTime[j]);
@@ -97,13 +110,6 @@ void MyNetwork:: getSUsCurAvaiChan(int t)
         }
     }
 }
-
-double totalRatio = 0;
-double totalSURatio = 0;
-double SU0avai = 0;
-double SU1avai = 0;
-double SU0SU1avai = 0;
-double SU0SU1notAvai = 0;
 
 void MyNetwork:: jumpStay(int t)
 {
@@ -216,7 +222,6 @@ void MyNetwork::jumpStayRandomRepRandomSense(int t)
     }
 }
 
-const int KEEP_TIME = 2;
 void MyNetwork:: jumpStayKeepRep(int t)
 {
     SU &su0 = allSU[0];
@@ -290,20 +295,22 @@ void MyNetwork:: getCurAllChanConAvaiTime()
 {
     for(int i  = 0; i < SU_NUM; i++){
         SU &su = allSU[i];
-        bool flag[TOTAL_CHAN_NUM+2] = {0};
-        for(int j = 0; j < su.avaiChan.size(); j++){
-            int c = su.avaiChan[j];
-            flag[c] = true;
-            su.allChanConAvaiTime[c]++;
-        }
         for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
-            if(!flag[j]){
-                su.allChanConAvaiTime[j] = 0;
+            if(su.allChanObj[j].ifAvai){
+                su.allChanObj[j].curConAvaiTime++;
+            }
+            else{
+                su.allChanObj[j].curConAvaiTime = 0;
             }
         }
-        printArrayFrom1(su.allChanConAvaiTime, TOTAL_CHAN_NUM);
+        sort(su.allChanObj+1, su.allChanObj+1+TOTAL_CHAN_NUM, cmpConAvaiTimeReverse);
+        for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
+            cout<<su.allChanObj[j].curConAvaiTime<<' ';
+        }
+        cout<<endl;
     }
 }
+
 void MyNetwork::initSimulation()
 {
     countAvaiTimeSlot.clear();
@@ -317,8 +324,6 @@ void MyNetwork::initSimulation()
     su0.lastStayChan = 0; su1.lastStayChan = 0;
     su0.alreadyStayTime = 0; su1.alreadyStayTime = 0;
     SU0SU1notAvai = SU0avai = SU1avai = SU0SU1avai = 0;
-    memset(allSU[0].allChanConAvaiTime, 0, sizeof(allSU[0].allChanConAvaiTime));
-    memset(allSU[1].allChanConAvaiTime, 0, sizeof(allSU[1].allChanConAvaiTime));
 }
 
 void MyNetwork::startSimulation()

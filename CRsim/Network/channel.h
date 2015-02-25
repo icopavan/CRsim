@@ -9,6 +9,21 @@
 #ifndef __CRsim__channel__
 #define __CRsim__channel__
 
-#include <stdio.h>
+#include "include.h"
+
+
+class CRchannel{
+public:
+    int ID;
+    int curConAvaiTime;
+    bool ifAvai;
+    
+};
+
+extern bool cmpID(const CRchannel &x, const CRchannel &y);
+
+extern bool cmpConAvaiTime(const CRchannel &x, const CRchannel &y);
+
+extern bool cmpConAvaiTimeReverse(const CRchannel &x, const CRchannel &y);
 
 #endif /* defined(__CRsim__channel__) */

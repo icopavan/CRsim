@@ -22,6 +22,7 @@ public:
     vI avaiChan;
     vector<DataPacket> allDataPkt;
     queue<DataPacket> pktTransQueue;
+    CRchannel allChanObj[TOTAL_CHAN_NUM+2];
     
     int avaiChanNum;
     int curStayChan;
