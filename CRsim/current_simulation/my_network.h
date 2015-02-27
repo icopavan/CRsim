@@ -37,13 +37,18 @@ public:
     void initSuNeighbor(int _id);
     void initAllSuNeighbors();
     void jumpStay(int t);
-    void jumpStayRadomRep(int t);
-    void jumpStayRandomRepRandomSense(int t);
-    void jumpStayKeepRep(int t);
+    void jsRadomRep(int t);
+    void jsRandomRepRandomSense(int t);
+    void jsKeepRep(int t);
+    void conAvaiTimeRendezvous(int t);
+    void conAvaiTimeRandRendezvous(int t);
+    void jsConAvaiTimeRandRendezvous(int t);
     void getSUsCurAvaiChan(int t);
     void printConAvaiTime();
-    void calAverConAvaiTime();
+    double calAverConAvaiTime();
+    double calConAvaiChanAverConAvaiTime();
     void getCurAllChanConAvaiTime();
+    void getCommonAvaiRatio();
     
     MyNetwork();
     virtual void initSimulation();

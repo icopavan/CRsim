@@ -20,5 +20,11 @@ bool cmpConAvaiTime(const CRchannel &x, const CRchannel &y)
 
 bool cmpConAvaiTimeReverse(const CRchannel &x, const CRchannel &y)
 {
-    return x.curConAvaiTime > y.curConAvaiTime;
+    if(x.curConAvaiTime == y.curConAvaiTime){
+        return x.ID < y.ID;
+    }
+    else{
+        return x.curConAvaiTime > y.curConAvaiTime;
+    }
 }
+

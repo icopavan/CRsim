@@ -27,18 +27,26 @@ extern double totalAnswer3;
 
 extern double total_cal;
 extern double total_mea;
+//template<typename T>
+//double aver(vector<T> x)
+//{
+//    double ans = 0;
+//    for(int i = 0; i < x.size(); i++) ans += x[i];
+//    return ans/x.size();
+//}
 
 int main(int argc, const char * argv[]) {
     totalAnswer1 = totalAnswer2 = totalAnswer3 = 0;
-    for(int i = 0; i < SIMULATION_REPEAT_TIME; i++){
-        MyNetwork my;
+    for(int i = 1; i <= SIMULATION_REPEAT_TIME; i++){
 //        cout<<"#######################"<<endl;
+        MyNetwork my;
         my.startSimulation();
-        cout<<i<<endl;
+//        cout<<"Time: "<<i<<endl;
 //        cout<<"#######################"<<endl<<endl;
     }
-    cout<<"Random rep rend time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-    cout<<"Random rep with random sense rend time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"Random rep rend time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"Js Largest con avai time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"Largest con avai time random rend: "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
     return  0;
 }
 

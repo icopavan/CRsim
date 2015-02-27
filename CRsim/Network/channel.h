@@ -11,13 +11,13 @@
 
 #include "include.h"
 
-
 class CRchannel{
 public:
     int ID;
     int curConAvaiTime;
     bool ifAvai;
-    
+    bool ifAvaiPreTime;
+    vector<int> allConAvaiTime;
 };
 
 extern bool cmpID(const CRchannel &x, const CRchannel &y);

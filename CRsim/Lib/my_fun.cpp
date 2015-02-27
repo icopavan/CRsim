@@ -121,16 +121,6 @@ void vectorCopy(vI &a, vI &b)
     }
 }
 
-template<typename T>
-bool findInSortedVector(const vector<T> &a, T x)
-{
-    int n = (int)a.size();
-    for(int i = 0; i < n; i++){
-        if(a[i] == x) return true;
-    }
-    return false;
-}
-
 bool vectorFindFrom1(vI a, int x)
 {
     for(int i = 1; i < a.size(); i++){
@@ -171,3 +161,4 @@ void arrayCopyFrom0(int a[], int b[], int n)
         a[i] = b[i];
     }
 }
+
