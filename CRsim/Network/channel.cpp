@@ -28,3 +28,20 @@ bool cmpConAvaiTimeReverse(const CRchannel &x, const CRchannel &y)
     }
 }
 
+bool cmp(int &x, int &y)
+{
+    return x > y;
+}
+
+void CRchannel:: printSortedAllConAvaiTime()
+{
+    sort(allConAvaiTime.begin(), allConAvaiTime.end(), cmp);
+    printVector(allConAvaiTime);
+    sort(allConAvaiTime.begin(), allConAvaiTime.end());
+}
+
+double CRchannel::getAverConAvaiTime()
+{
+    averageConAvaiTime = averValOfVector(allConAvaiTime);
+    return averageConAvaiTime;
+}

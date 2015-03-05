@@ -29,8 +29,4 @@ public:
     virtual int getChanAtTimeT(int t); //Get the channel to hop to at time t if it needs the available set;
 };
 
-extern MyHop returnOneMyHopObj();
-extern  MyHop returnOneMyHopObj(int cur_chan_n);
-extern MyHop returnOneMyHopObj(int cur_chan_n, vI &avai);
-
 #endif /* defined(__CRsim__my_seq__) */

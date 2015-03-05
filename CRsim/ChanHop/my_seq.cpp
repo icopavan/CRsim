@@ -122,24 +122,5 @@ int MyHop:: getChanAtTimeT(int t)
         cur -= (hop_seq.size()-1);
     }
     curChan = hop_seq[cur];
-    //cout<<cur<<' '<<cur_chan<<endl;
     return curChan;
-}
-
-MyHop returnOneMyHopObj()
-{
-    MyHop ans;
-    return ans;
-}
-
-MyHop returnOneMyHopObj(int cur_chan_n)
-{
-    MyHop ans(cur_chan_n);
-    return ans;
-}
-
-MyHop returnOneMyHopObj(int cur_chan_n, vI &avai)
-{
-    MyHop ans(cur_chan_n, avai);
-    return ans;
 }

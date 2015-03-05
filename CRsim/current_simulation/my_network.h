@@ -46,12 +46,13 @@ public:
     void pureRandomRend(int t);
     
     void getSUsCurAvaiChan(int t);
-    void printConAvaiTime();
+    void printTwoSUsConAvaiTime();
+    void printAllChanConAvaiTime();
     double calAverConAvaiTime();
     double calConAvaiChanAverConAvaiTime();
     void getCurAllChanConAvaiTime();
     void getCommonAvaiRatio();
-    
+    void printSimulationResults();
     MyNetwork();
     virtual void initSimulation();
     virtual void startSimulation();

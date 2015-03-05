@@ -10,6 +10,8 @@
 #define __CRsim__channel__
 
 #include "include.h"
+#include "debug.h"
+#include "my_fun.h"
 
 class CRchannel{
 public:
@@ -18,6 +20,10 @@ public:
     bool ifAvai;
     bool ifAvaiPreTime;
     vector<int> allConAvaiTime;
+    double averageConAvaiTime;
+    
+    void printSortedAllConAvaiTime();
+    double getAverConAvaiTime();
 };
 
 extern bool cmpID(const CRchannel &x, const CRchannel &y);

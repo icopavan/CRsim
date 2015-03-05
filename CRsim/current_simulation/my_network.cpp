@@ -94,47 +94,6 @@ void MyNetwork:: jumpStayRend(int t)
     int c1 = su1.chanHop->getChanAtTimeT(allSU[1].curSysTimeSlot + t);
     su0.curStayChan = c0;
     su1.curStayChan = c1;
-//    bool flag0 = vec_find_int(su0.avaiChan, c0);
-//    bool flag1 = vec_find_int(su1.avaiChan, c1);
-//    if(flag0 && flag1) SU0SU1avai += 1;
-//    if(!flag0 && flag1) SU1avai += 1;
-//    if(flag0 && !flag1) SU0avai += 1;
-//    if(!flag1 && !flag0) SU0SU1notAvai += 1;
-//    sort(su0.avaiChan.begin(), su0.avaiChan.end());
-//    sort(su1.avaiChan.begin(), su1.avaiChan.end());
-//            cout<<"Time "<<t<<' '; printVector(allSU[0].avaiChan);
-//            cout<<"Time "<<t<<' '; printVector(allSU[1].avaiChan);
-//            cout<<"Common available channels: ";
-//    vI tmp = getComFromTwoVector(su0.avaiChan, su1.avaiChan);
-//    cout<<su0.avaiChan.size()<<" : "; printVector(su0.avaiChan);
-//    cout<<su1.avaiChan.size()<<" : "; printVector(su1.avaiChan);
-//    cout<<tmp.size()<<" : "; printVector(tmp);
-//    cout<<((double)1.0*tmp.size())/su0.avaiChan.size();
-//    totalRatio += ((double)1.0*tmp.size())/su0.avaiChan.size();
-//    totalSURatio += (1.0*su0.avaiChan.size())/TOTAL_CHAN_NUM;
-    if(t < TOTAL_TIME_SLOT - 1){
-//        cout<<", ";
-    }
-    if(t == TOTAL_TIME_SLOT - 1)  {
-//        cout<<"];"<<endl;
-//        totalAnswer1 += totalRatio / TOTAL_TIME_SLOT;
-//        totalAnswer2 += totalSURatio / TOTAL_TIME_SLOT;
-//        cout<<"Average common available ratio: "<<totalRatio / TOTAL_TIME_SLOT<<endl;
-//        int tt = TOTAL_TIME_SLOT - START_REND_TIME;
-//        cout<<"Average SU available ratio: "<<totalSURatio/tt<<endl;
-//        cout<<"Ratio distribution: "<<SU0SU1avai/tt<<' '<<SU0avai/tt<<' '<<SU1avai/tt<<' '<<SU0SU1notAvai/tt<<endl;
-//        double tmp = totalSURatio/tt;
-//        cout<<"Calculated Distribution: "<<tmp*tmp<<' '<<tmp*(1-tmp)<<' '<<tmp*(1-tmp)<<' '<<(1-tmp)*(1-tmp)<<endl;
-//        cout<<"Total replacement ratio: "<<(SU0avai+SU1avai+SU0SU1notAvai)/tt<<endl;
-//        totalAnswer1 += (SU0avai+SU1avai+SU0SU1notAvai)/tt;
-    }
-//    cout<<"c0, c1: "<<c0<<' '<<c1<<endl;
-//    if(c1 == c0){
-//        if(vec_find_int(su0.avaiChan, c0) && vec_find_int(su1.avaiChan, c1)){
-//                cout<<"Js: ";
-//                cout<<t<<' '<<t-START_REND_TIME<<endl;
-//        }
-//    }
 }
 
 void MyNetwork::jsRadomRepRend(int t)
@@ -360,6 +319,31 @@ void MyNetwork:: getCurAllChanConAvaiTime()
     }
 }
 
+void MyNetwork:: printTwoSUsConAvaiTime()
+{
+    cout<<"#####################"<<endl;
+    for(int t = 0; t < SU_NUM; t++){
+        SU &su = allSU[t];
+        for(int i  = 1; i <= TOTAL_CHAN_NUM; i++){
+            cout<<su.allChanObj[i].curConAvaiTime<<' ';
+        }
+        cout<<endl;
+    }
+    cout<<"#####################"<<endl;
+    cout<<endl;
+}
+
+void MyNetwork:: printAllChanConAvaiTime()
+{
+    SU &su = allSU[0];
+    for(int i = 1; i <= TOTAL_CHAN_NUM; i++){
+        cout<<"########################"<<endl;
+        su.allChanObj[i].printSortedAllConAvaiTime();
+        cout<<"########################"<<endl;
+        cout<<endl;
+    }
+}
+
 void MyNetwork:: getCommonAvaiRatio()
 {
     SU &su0 = allSU[0];
@@ -399,12 +383,16 @@ void MyNetwork::startSimulation()
             }
             getSUsCurAvaiChan(t);
             getCurAllChanConAvaiTime();
-            if(t > START_REND_TIME){
-                jumpStayRend(t);
-                jsRadomRepRend(t);
-                pureRandomRend(t);
-                conAvaiTimeRandRend(t);
+//            printTwoSUsConAvaiTime();
+            if(t == TOTAL_TIME_SLOT-1){
+                printAllChanConAvaiTime();
             }
+//            if(t > START_REND_TIME){
+//                jumpStayRend(t);
+//                jsRadomRepRend(t);
+//                pureRandomRend(t);
+//                conAvaiTimeRandRend(t);
+//            }
         }
     //    double sum = 0;
     //    for(int i = 1; i <= TOTAL_CHAN_NUM; i++){
