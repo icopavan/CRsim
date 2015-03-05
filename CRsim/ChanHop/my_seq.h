@@ -26,7 +26,7 @@ public:
     void init_my_hop(int t, int st_id); //t is the time start the hop, id is the index of seq to start
     void get_hop_para(int t);// get the parameters of my hopping at time t
     virtual void init_seq();// Init the channel hopping sequence
-    virtual int get_chan_t(int t); //Get the channel to hop to at time t if it needs the available set;
+    virtual int getChanAtTimeT(int t); //Get the channel to hop to at time t if it needs the available set;
 };
 
 extern MyHop returnOneMyHopObj();

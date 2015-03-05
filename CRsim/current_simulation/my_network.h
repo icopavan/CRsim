@@ -36,13 +36,15 @@ public:
     void initSuAvaiChan();
     void initSuNeighbor(int _id);
     void initAllSuNeighbors();
-    void jumpStay(int t);
-    void jsRadomRep(int t);
-    void jsRandomRepRandomSense(int t);
-    void jsKeepRep(int t);
-    void conAvaiTimeRendezvous(int t);
-    void conAvaiTimeRandRendezvous(int t);
-    void jsConAvaiTimeRandRendezvous(int t);
+    void jumpStayRend(int t);
+    void jsRadomRepRend(int t);
+    void jsRandomRepRandomSenseRend(int t);
+    void jsKeepRepRend(int t);
+    void conAvaiTimeRend(int t);
+    void conAvaiTimeRandRend(int t);
+    void jsConAvaiTimeRandRend(int t);
+    void pureRandomRend(int t);
+    
     void getSUsCurAvaiChan(int t);
     void printConAvaiTime();
     double calAverConAvaiTime();

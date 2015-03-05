@@ -20,7 +20,7 @@ public:
     EnJsHop(int cur_avai_n);
     EnJsHop(int cur_chan_n, vI &avai);
     virtual void init_seq();// Init the channel hopping sequence
-    virtual int get_chan_t(int t); //Get the channel to hop to at time t if it needs the available set;
+    virtual int getChanAtTimeT(int t); //Get the channel to hop to at time t if it needs the available set;
 };
 
 #endif /* defined(__CRsim__en_jump_stay__) */

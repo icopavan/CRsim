@@ -24,7 +24,7 @@ public:
     ChanHop(int chan_n);
     ChanHop(int chan_n, vI &avai);
     virtual void init_seq();// Init the channel hopping sequence
-    virtual int get_chan_t(int t); //Get the channel to hop to at time t;
+    virtual int getChanAtTimeT(int t); //Get the channel to hop to at time t;
 };
 
 #endif /* defined(__CRsim__chan_hop__) */

@@ -51,6 +51,7 @@ public:
     int remain[MAX_NODE_NUM][MAX_NODE_NUM];
     int sourceID;
     int sinkID;
+    
     GraphAdjMatrix();
     void printAdjMatrixFrom0();
     void printAdjMatrixFrom1();

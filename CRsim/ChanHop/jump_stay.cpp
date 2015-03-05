@@ -45,7 +45,7 @@ void JsHop::  init_seq()
     r0 = my_randint(1, M);
 }
 
-int JsHop:: get_chan_t(int t)
+int JsHop:: getChanAtTimeT(int t)
 {
     int n = t / (3*P);
     int i;

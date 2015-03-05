@@ -84,7 +84,7 @@ void MyHop:: init_seq()
     if(M == 4){
         int b[9] = {0,1,1,4,2,3,2,4,3};
         hop_seq.resize(10);
-        vec_copy_from1(hop_seq, b, 8);
+        vecFromArrayIndex1(hop_seq, b, 8);
         return;
     }
     hop_seq.resize(2*M+1);
@@ -113,7 +113,7 @@ void MyHop:: get_hop_para(int t)
     hop_count = t - rnd_st_t + 1;
 }
 
-int MyHop:: get_chan_t(int t)
+int MyHop:: getChanAtTimeT(int t)
 {
     get_hop_para(t);
     int tmp = t - rnd_st_t;

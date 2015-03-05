@@ -18,7 +18,7 @@ vI SU::getAvaiChanRandom(int _chan_n)
     int tmp = 0;
     while(tmp < avaiChanNum){
         int t1 = my_randint(1, _chan_n);
-        if(!vec_find_int(ans, t1)){
+        if(!vectorFind(ans, t1)){
             ans.push_back(t1);
             tmp++;
         }

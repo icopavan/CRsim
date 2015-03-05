@@ -91,23 +91,19 @@ string intToBinaryString(int x, int n)
     return ans;
 }
 
-double disTwoPoint(double x1, double y1, double x2, double y2)
+double disSquareTwoPoint(double x1, double y1, double x2, double y2)
 {
     return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2);
 }
 
+static double nChooseM[105][105] = {0};
 double myNchooseM(int n, int m)
 {
     if(m >= n) return 0;
     if(m == 0) return 1;
-    double dp[105][105]= {0};
-    dp[0][0] = 1;
-    for(int i = 1; i <= n; i++) dp[i][i] = dp[i][0] = 1;
-    for(int i = 2; i <= n; i++){
-        for(int j = 1; j <= i; j++){
-            dp[i][j] = dp[i-1][j] + dp[i-1][j-1];
-        }
-    }
-    return dp[n][m];
+    if(m == 1) return n;
+    if(nChooseM[n][m] > EPS) return nChooseM[n][m];
+    nChooseM[n][m] = myNchooseM(n-1, m) + myNchooseM(n-1, m-1);
+    return nChooseM[n][m];
 }
 

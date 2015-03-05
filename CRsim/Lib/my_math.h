@@ -26,7 +26,7 @@ extern string intToBinaryString(int x);
 
 extern string intToBinaryString(int x, int n);
 
-double disTwoPoint(double x1, double y1, double x2, double y2);
+double disSquareTwoPoint(double x1, double y1, double x2, double y2);
 
 double myNchooseM(int n, int m);
 

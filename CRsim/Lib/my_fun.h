@@ -12,14 +12,22 @@
 #include "include.h"
 #include "my_math.h"
 
-extern void vec_copy_from0(vI &a, int b[], int n);
+template<class T>
+void vecFromArrayIndex1(vector<T> &a, T b[], int n)
+{
+    a.resize(n+2);
+    for(int i = 1; i <= n; i++) a[i] = b[i];
+}
 
-extern void vec_copy_from1(vI &a, int b[], int n);
-
-extern bool vec_find_int(vI a, int x);
+template<class T>
+void vecFromArrayRange(vector<T> &a, T b[], int st, int n)
+{
+    a.resize(n+2);
+    for(int i = st; i <= st+n-1; i++) a[i] = b[i];
+}
 
 /*generate n different number in the range [st, ed], return the vector */
-extern vI generateDiffRandNum(int n, int st, int ed);
+extern vI generateDiffRandInt(int n, int st, int ed);
 
 /*binary representation of n, put results into ans, ans[0] is the length*/
 extern void binaryRepresent(int n, int ans[]);
@@ -34,7 +42,7 @@ extern vI getComFromTwoVector(vI x, vI y);
 
 extern void arrayCopyFrom0(int a[], int b[], int n); // copy a to b with n elements;
 
-template<typename T>
+template<class T>
 double averValOfVector(vector<T> x)
 {
     double ans = 0;
@@ -42,7 +50,27 @@ double averValOfVector(vector<T> x)
     return ans/x.size();
 }
 
-template<typename T>
+template<class T>
+int vectorFind(const vector<T> &a, T x)
+{
+    for(int i = 0; i < a.size(); i++){
+        if(a[i] == x) return i;
+    }
+    return -1;
+}
+
+template<class T>
+int vectorFind(const vector<T> &a, T x, int st, int ed)
+{
+    assert(st<=ed);
+    assert(ed < a.size());
+    for(int i = st; i <= ed; i++){
+        if(a[i] == x) return i;
+    }
+    return -1;
+}
+
+template<class T>
 int vectorSortedFind(const vector<T> &a, T x)
 {
     int r = (int)a.size(), l = 0;
@@ -63,13 +91,71 @@ int vectorSortedFind(const vector<T> &a, T x)
     return ans;
 }
 
-template<typename T>
-int vectorFind(const vector<T> &a, T x)
+template<class T>
+int vectorSortedFind(const vector<T> &a, T x, int st, int ed)
 {
-    for(int i = 0; i < a.size(); i++){
-        if(a[i] == x) return i;
+    assert(st<=ed);
+    assert(ed < a.size());
+    int r = ed, l = st;
+    int ans = -1;
+    while(l <= r){
+        int mid = (l+r)>>1;
+        if(a[mid] == x){
+            ans = mid;
+            break;
+        }
+        else if(a[mid] > x){
+            r = mid - 1;
+        }
+        else{
+            l = mid + 1;
+        }
     }
-    return -1;
+    return ans;
+}
+
+template<class T>
+int vectorReverseSortedFind(const vector<T> &a, T x)
+{
+    int r = (int)a.size(), l = 0;
+    int ans = -1;
+    while(l <= r){
+        int mid = (l+r)>>1;
+        if(a[mid] == x){
+            ans = mid;
+            break;
+        }
+        else if(a[mid] > x){
+            l = mid + 1;
+        }
+        else{
+            r = mid - 1;
+        }
+    }
+    return ans;
+}
+
+template<class T>
+int vectorReverseSortedFind(const vector<T> &a, T x, int st, int ed)
+{
+    assert(st<=ed);
+    assert(ed < a.size());
+    int r = ed, l = st;
+    int ans = -1;
+    while(l <= r){
+        int mid = (l+r)>>1;
+        if(a[mid] == x){
+            ans = mid;
+            break;
+        }
+        else if(a[mid] > x){
+            l = mid + 1;
+        }
+        else{
+            r = mid - 1;
+        }
+    }
+    return ans;
 }
 
 #endif /* defined(__CRsim__my_fun__) */

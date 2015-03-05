@@ -26,6 +26,8 @@ public:
     int puNum;
     int chanAllocToPuCount[TOTAL_CHAN_NUM+5];
     int avaiChanNumForPU;
+    int chanAvaiCountSu0[TOTAL_CHAN_NUM+5];
+    int chanComAvaiCountSu0Su1[TOTAL_CHAN_NUM + 5];
     
     void initAllPU();
     void initAllPuTrafficEachTime();

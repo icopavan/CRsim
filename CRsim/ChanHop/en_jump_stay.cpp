@@ -39,7 +39,7 @@ void EnJsHop::  init_seq()
     r0 = my_randint(1, P);
 }
 
-int EnJsHop:: get_chan_t(int t)
+int EnJsHop:: getChanAtTimeT(int t)
 {
     int j;
     int n = t / (4*P);
@@ -54,7 +54,7 @@ int EnJsHop:: get_chan_t(int t)
     if(j > M){
         j = (j-1)%M + 1;
     }
-    if(!vec_find_int(avai_chan, j)){
+    if(!vectorFind(avai_chan, j)){
         j = avai_chan[(j - 1) % avai_chan_n +1];
     }
     curChan  = j;

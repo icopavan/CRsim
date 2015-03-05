@@ -42,7 +42,7 @@ void ChanHop:: init_seq()
     return;
 }
 
-int ChanHop:: get_chan_t(int t)
+int ChanHop:: getChanAtTimeT(int t)
 {
     cout<<"shit"<<endl;
     curChan = 1;

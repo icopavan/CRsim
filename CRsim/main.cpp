@@ -37,16 +37,16 @@ extern double total_mea;
 
 int main(int argc, const char * argv[]) {
     totalAnswer1 = totalAnswer2 = totalAnswer3 = 0;
-    for(int i = 1; i <= SIMULATION_REPEAT_TIME; i++){
+    for(int i = 1; i <= 1; i++){
 //        cout<<"#######################"<<endl;
         MyNetwork my;
         my.startSimulation();
 //        cout<<"Time: "<<i<<endl;
 //        cout<<"#######################"<<endl<<endl;
     }
-//    cout<<"Random rep rend time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-//    cout<<"Js Largest con avai time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
-//    cout<<"Largest con avai time random rend: "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"Random rep rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"Pure random rend aver time:  "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"Con avai time rend aver time: "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
     return  0;
 }
 

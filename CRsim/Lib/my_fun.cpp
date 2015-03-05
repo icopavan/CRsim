@@ -9,23 +9,6 @@
 #include "my_fun.h"
 #include "debug.h"
 
-/* all index from 1, copy an array to a vector*/
-void vec_copy_from1(vI &a, int b[], int n)
-{
-    a.resize(n+1);
-    for(int i = 1; i <= n; i++){
-        a[i] = b[i];
-    }
-}
-
-void vec_copy_from0(vI &a, int b[], int n)
-{
-    a.resize(n);
-    for(int i = 0; i < n; i++){
-        a[i] = b[i];
-    }
-}
-
 bool vec_find_int(vI a, int x)
 {
     int l = (int)a.size();
@@ -35,45 +18,7 @@ bool vec_find_int(vI a, int x)
     return false;
 }
 
-bool find_sorted_vec_int0(const vI a, int x)
-{
-    int l = 0, r = (int)a.size();
-    int mid;
-    while(l <= r){
-        mid = (l + r) >> 1;
-        if(a[mid] == x){
-            return true;
-        }
-        else if(a[mid] > x){
-            r = mid - 1;
-        }
-        else{
-            l = mid + 1;
-        }
-    }
-    return false;
-}
-
-bool find_sorted_vec_int1(const vI a, int x)
-{
-    int l = 1, r = (int)a.size();
-    int mid;
-    while(l <= r){
-        mid = (l + r) >> 1;
-        if(a[mid] == x){
-            return true;
-        }
-        else if(a[mid] > x){
-            r = mid - 1;
-        }
-        else{
-            l = mid + 1;
-        }
-    }
-    return false;
-}
-
-vI generateDiffRandNum(int n, int st, int ed)
+vI generateDiffRandInt(int n, int st, int ed)
 {
     vI ans;
     set<int> s;
