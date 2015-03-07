@@ -18,11 +18,12 @@ const int MAX_SENSE_CHAN_NUM = (int)(MAX_SENSE_CHAN_RATIO * TOTAL_CHAN_NUM);
 const int PKT_MAX_LEN_PU =  100; //packet size
 const int PKT_MIN_LEN_PU =  100; //packet size
 const int   TOTAL_TIME_SLOT  = 50000; //simulation time slots
-const int   SIMULATION_REPEAT_TIME = 1; //Do how many simulations
+const int   SIMULATION_REPEAT_TIME = 100; //Do how many simulations
 const double   TIME_SLOT_LEN  = 0.002; //length of each time slot
 const double   CHAN_AVAI_RATIO = 0.5; //channel available ration of each SU
 const double   NEIGHBOR_RATIO = 0.5; //channel available ration of each SU
 const double   USED_CHAN_RATIO = 0.5; //channel available ration of each SU
+const double SENSE_RANGE_SU =  80; // sensing range of SU
 
 const int   CR_NUM = 4; //number of cognitive radio of SU
 
@@ -33,8 +34,6 @@ const int PKT_MAX_LEN_SU =  10; //packet size
 const double PKT_ARR_RATE_SU = 10; // su packet arrival rate
 
 const int SIDE_LENGTH = 200; //area side length
-
-const double SENSE_RANGE_SU = 100; // sensing range of SU
 
 const int THETA_OF_SSL = 20;
 

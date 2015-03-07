@@ -20,17 +20,6 @@ void printArrayFrom0(int x[], int n)
     cout<<endl;
 }
 
-void printVector(const vI x)
-{
-    if(x.size() == 0){
-        cout<<"The vector is empty\n";
-    }
-    for(int i = 0; i < x.size(); i++){
-        cout<<x[i]<<' ';
-    }
-    cout<<endl;
-}
-
 void printVectorFrom1(vI x)
 {
     for(int i = 1; i < x.size(); i++){

@@ -38,7 +38,20 @@ extern void binaryRepresent(int n, int l, int ans[]);
 /*copy elements in a to vector b*/
 extern void vectorCopy(vI &a, vI &b);
 
-extern vI getComFromTwoVector(vI x, vI y);
+template<class T>
+vector<T> getComFromTwoVector(vector<T> x, vector<T> y)
+{
+    vector<T> ans;
+    for(int i = 0; i < x.size(); i++){
+        for(int j = 0; j < y.size(); j++){
+            if(x[i] == y[j]){
+                ans.push_back(x[i]);
+                break;
+            }
+        }
+    }
+    return ans;
+}
 
 extern void arrayCopyFrom0(int a[], int b[], int n); // copy a to b with n elements;
 

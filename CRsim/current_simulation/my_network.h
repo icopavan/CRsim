@@ -46,6 +46,7 @@ public:
     void pureRandomRend(int t);
     
     void getSUsCurAvaiChan(int t);
+    void getCurConAvaiChan();
     void printTwoSUsConAvaiTime();
     void printAllChanConAvaiTime();
     double calAverConAvaiTime();

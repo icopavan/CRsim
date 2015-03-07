@@ -13,7 +13,19 @@
 
 void printArrayFrom0(int x[], int n);
 void printArrayFrom1(int x[], int n);
-void printVector(vI x);
+
+template<class T>
+void printVector(vector<T> x)
+{
+    if(x.size() <= 0){
+        cout<<"The vector is empty\n";
+    }
+    for(auto p : x){
+        cout<<p<<' ';
+    }
+    cout<<endl;
+}
+
 void printVectorFrom1(vI x);
 void printVectorVector(vector<vI> x);
 void printVectorOfPair(vP x);
