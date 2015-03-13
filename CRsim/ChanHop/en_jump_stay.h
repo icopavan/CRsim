@@ -13,14 +13,13 @@
 #include "jump_stay.h"
 
 class EnJsHop : public JsHop{
-private:
-    
 public:
     EnJsHop();
     EnJsHop(int cur_avai_n);
     EnJsHop(int cur_chan_n, vI &avai);
     virtual void init_seq();// Init the channel hopping sequence
     virtual int getChanAtTimeT(int t); //Get the channel to hop to at time t if it needs the available set;
+    virtual int getChanAtTimeT(int t, const vI &avai); //Get the channel to hop to at time t;
 };
 
 #endif /* defined(__CRsim__en_jump_stay__) */

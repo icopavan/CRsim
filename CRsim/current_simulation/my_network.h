@@ -37,6 +37,7 @@ public:
     void initSuNeighbor(int _id);
     void initAllSuNeighbors();
     void jumpStayRend(int t);
+    void enhanceJumpStayRend(int t);
     void jsRadomRepRend(int t);
     void jsRandomRepRandomSenseRend(int t);
     void jsKeepRepRend(int t);
@@ -54,6 +55,7 @@ public:
     void getCurAllChanConAvaiTime();
     void getCommonAvaiRatio();
     void printSimulationResults();
+    void calChanEachTime();
     MyNetwork();
     virtual void initSimulation();
     virtual void startSimulation();

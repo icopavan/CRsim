@@ -41,6 +41,11 @@ void EnJsHop::  init_seq()
 
 int EnJsHop:: getChanAtTimeT(int t)
 {
+    return 0;
+}
+
+int EnJsHop:: getChanAtTimeT(int t, const vI &avai)
+{
     int j;
     int n = t / (4*P);
     int i00 = (i0 + n -1) % P + 1;// update the i0
@@ -54,8 +59,8 @@ int EnJsHop:: getChanAtTimeT(int t)
     if(j > M){
         j = (j-1)%M + 1;
     }
-    if(!vectorFind(avai_chan, j)){
-        j = avai_chan[(j - 1) % avai_chan_n +1];
+    if(!vectorFind(avai, j)){
+        j = avai[(j - 1) % avai.size()];
     }
     curChan  = j;
     return j;

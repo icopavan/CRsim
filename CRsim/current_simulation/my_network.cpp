@@ -13,9 +13,11 @@ double total_mea = 0;
 double totalAnswer1 = 0.0;
 double totalAnswer2 = 0.0;
 double totalAnswer3 = 0.0;
+double totalAnswer4 = 0.0;
 bool rendSuc1 = 0;
 bool rendSuc2= 0;
 bool rendSuc3 = 0;
+bool rendSuc4 = 0;
 int START_REND_TIME = my_randint(1, TOTAL_TIME_SLOT/10);
 const int countChannelID = TOTAL_CHAN_NUM/2; //which channel to count the continuous available time slot;
 bool preAvai[SU_NUM+2][TOTAL_CHAN_NUM+5] = {1};
@@ -35,12 +37,12 @@ MyNetwork:: MyNetwork() : CRNetwork()
 
 void MyNetwork:: initAllSU()
 {
-    for(int i = 0; i < SU_NUM; i++){
+    for(int i = 0; i < 2; i++){
         MySU tmp;
         tmp.location = make_pair(SIDE_LENGTH*(i+2) / 5.0, SIDE_LENGTH*(1)/2.0);
         tmp.curSysTimeSlot = my_randint(1, 10000000);
-        tmp.chanHop = new JsHop();
         tmp.neighborPU.clear();
+        tmp.chanHop = new JsHop();
         for(int j = 0; j < PU_NUM; j++){
             if(disSquareTwoPoint(tmp.location.first, tmp.location.second, allPU[j].location.first, allPU[j].location.second) <= SENSE_RANGE_SU * SENSE_RANGE_SU){
                 tmp.neighborPU.push_back(j);
@@ -54,7 +56,9 @@ void MyNetwork:: initAllSU()
         allSU.push_back(tmp);
     }
     allSU.push_back(allSU[0]);
+    allSU[2].chanHop = new EnJsHop();
     allSU.push_back(allSU[1]);
+    allSU[3].chanHop = new EnJsHop();
 }
 
 void MyNetwork:: getSUsCurAvaiChan(int t)
@@ -95,12 +99,36 @@ void MyNetwork:: jumpStayRend(int t)
     int c1 = su1.chanHop->getChanAtTimeT(allSU[1].curSysTimeSlot + t);
     su0.curStayChan = c0;
     su1.curStayChan = c1;
+    cout<<c0<<' '<<c1<<endl;
+    if( (c1 == c0+TOTAL_CHAN_NUM && vectorFind(su0.avaiChan, c0) && vectorFind(su1.avaiChan, c0))
+     || (c0 == c1+TOTAL_CHAN_NUM && vectorFind(su1.avaiChan, c1) && vectorFind(su0.avaiChan, c1))
+       ){
+        rendSuc1 = 1;
+        totalAnswer1 += t - START_REND_TIME;
+        cout<<"JS: "<< t- START_REND_TIME<<endl;
+    }
+}
+
+void MyNetwork:: enhanceJumpStayRend(int t)
+{
+    if(rendSuc1) return;
+    SU &su0 = allSU[2];
+    SU &su1 = allSU[3];
+    int c0 = su0.chanHop->getChanAtTimeT(allSU[0].curSysTimeSlot + t, allSU[0].avaiChan);
+    int c1 = su1.chanHop->getChanAtTimeT(allSU[1].curSysTimeSlot + t, allSU[1].avaiChan);
+    su0.curStayChan = c0;
+    su1.curStayChan = c1;
+    if(c0 == c1){
+        rendSuc1 = 1;
+        totalAnswer1 += t - START_REND_TIME;
+        cout<<"Enhanced JS: "<< t- START_REND_TIME<<endl;
+    }
 }
 
 void MyNetwork::jsRadomRepRend(int t)
 {
     /////////////////////////////////////Jump stay with random replacement////////////////////////////////////////////
-    if(rendSuc1) return;
+    if(rendSuc2) return;
     SU &su0 = allSU[0];
     SU &su1 = allSU[1];
     int c0 = su0.curStayChan;
@@ -110,8 +138,8 @@ void MyNetwork::jsRadomRepRend(int t)
     if(c0 == c1){
         cout<<"Js Random: ";
         cout<<t-START_REND_TIME<<endl;
-        totalAnswer1 += t-START_REND_TIME;
-        rendSuc1 = 1;
+        totalAnswer2 += t-START_REND_TIME;
+        rendSuc2 = 1;
     }
 }
 
@@ -189,19 +217,20 @@ void MyNetwork:: jsConAvaiTimeRandRend(int t)
 static int rendSucCount1  = 0;
 static int rendSucCount2  = 0;
 const int NUM_CHOOSE_CHAN = 7;
+int recCurPos = 0;
 void MyNetwork:: conAvaiTimeRandRend(int t)
 {
     /////////////////////////////////////Always choose the channel with the largest con avai time////////////////////////////////////////////
     if(rendSuc3) return;
     SU &su0 = allSU[0];
     SU &su1 = allSU[1];
-    
     sort(su0.allChanObj+1, su0.allChanObj+1+TOTAL_CHAN_NUM, cmpConAvaiTimeReverse);
     int c0 = su1.allChanObj[my_randint(1, NUM_CHOOSE_CHAN)].ID;
     sort(su0.allChanObj+1, su0.allChanObj+1+TOTAL_CHAN_NUM, cmpID);
-    
     sort(su1.allChanObj+1, su1.allChanObj+1+TOTAL_CHAN_NUM, cmpConAvaiTimeReverse);
-    int c1 = su1.allChanObj[my_randint(1, NUM_CHOOSE_CHAN)].ID;
+    recCurPos++;
+    if(recCurPos > 5) recCurPos = 1;
+    int c1 = su1.allChanObj[recCurPos].ID;
     sort(su1.allChanObj+1, su1.allChanObj+1+TOTAL_CHAN_NUM, cmpID);
     
     if(c0 == c1){
@@ -216,7 +245,7 @@ void MyNetwork:: conAvaiTimeRandRend(int t)
 
 void MyNetwork:: pureRandomRend(int t)
 {
-    if(rendSuc2) return;
+    if(rendSuc4) return;
     SU &su0  = allSU[0];
     SU &su1  = allSU[1];
     int c0 = su0.avaiChan[my_randint(0, (int)su0.avaiChan.size()-1)];
@@ -224,8 +253,8 @@ void MyNetwork:: pureRandomRend(int t)
     if(c0 == c1){
                 cout<<"Pure random rend: ";
                 cout<<t-START_REND_TIME<<endl;
-        totalAnswer2 += t-START_REND_TIME;
-        rendSuc2 = 1;
+        totalAnswer4 += t-START_REND_TIME;
+        rendSuc4 = 1;
         rendSucCount2++;
         cout<<rendSucCount2<<endl;
     }
@@ -302,6 +331,41 @@ double MyNetwork:: calConAvaiChanAverConAvaiTime()
     return 1.0/(1.0-ans);
 }
 
+int count1 = 0;
+void MyNetwork:: calChanEachTime()
+{
+    int P = TOTAL_CHAN_NUM*2+1;
+    int r1 = my_randint(1, P), r2 = my_randint(1, P);
+    while(r1 == r2){
+        r1 = my_randint(1, P);
+        r2 = my_randint(1, P);
+    }
+    int x1 = my_randint(0, P), x2 = my_randint(0, P);
+    vI ans1, ans2;
+//    cout<<r1<<' '<<r2<<endl;
+//    int t1 = my_randint(1, P), t2 = my_randint(1, P);
+    int t1 = 0, t2 = 0;
+    while (ans1.size() < P) {
+        ans1.push_back((x1+t1*r1)%P);
+        t1++;
+    }
+    while (ans2.size() < P) {
+        ans2.push_back((x2+t2*r2)%P);
+        t2++;
+    }
+    for(int i = 0; i < P; i++){
+//        cout<<v1%P<<' '<<v2%P<<endl;
+        if(abs(ans1[i] - ans2[i]) == TOTAL_CHAN_NUM){
+//            cout<<"shit"<<endl;
+            count1++;
+            break;
+        }
+    }
+//    sort(ans1.begin(), ans1.end());
+//    sort(ans2.begin(), ans2.end());
+//    printVector(ans1);
+//    printVector(ans2);
+}
 void MyNetwork:: getCurAllChanConAvaiTime()
 {
     for(int i  = 0; i < SU_NUM; i++){
@@ -384,7 +448,8 @@ void MyNetwork::initSimulation()
 //    cout<<"x = [";
 //    totalRatio = 0;
 //    totalSURatio = 0;
-    rendSuc1 = rendSuc2 = rendSuc3 = 0;
+    rendSuc1 = rendSuc2 = rendSuc3 = rendSuc4 = 0;
+    recCurPos = 0;
     for(int i = 0; i < SU_NUM; i++){
         SU &su = allSU[i];
         for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
@@ -397,26 +462,28 @@ void MyNetwork::initSimulation()
 void MyNetwork::startSimulation()
 {
     totalAnswer1 = totalAnswer2 = totalAnswer3 = 0;
+    count1 = 0;
     for(int i = 0; i < SIMULATION_REPEAT_TIME; i++){
         initSimulation();
         START_REND_TIME = my_randint(TOTAL_TIME_SLOT/5, TOTAL_TIME_SLOT/2);
-        for(int t = 0; t < TOTAL_TIME_SLOT; t++){
-            if(rendSuc1 && rendSuc2 && rendSuc3){
-                break;
-            }
-            getSUsCurAvaiChan(t);
-            getCurAllChanConAvaiTime();
-//            printTwoSUsConAvaiTime();
-            if(t == TOTAL_TIME_SLOT-1){
-//                printAllChanConAvaiTime();
-            }
-            if(t > START_REND_TIME){
-                jumpStayRend(t);
-                jsRadomRepRend(t);
-                pureRandomRend(t);
-                conAvaiTimeRandRend(t);
-            }
-        }
+        calChanEachTime();
+//        for(int t = 0; t < TOTAL_TIME_SLOT; t++){
+//            if(rendSuc1){ //&& rendSuc2 && rendSuc3 && rendSuc4){
+//                break;
+//            }
+//            getSUsCurAvaiChan(t);
+//            getCurAllChanConAvaiTime();
+////            printTwoSUsConAvaiTime();
+//            if(t == TOTAL_TIME_SLOT-1){
+//            }
+//            if(t > START_REND_TIME){
+//                jumpStayRend(t);
+////                enhanceJumpStayRend(t);
+////                jsRadomRepRend(t);
+////                pureRandomRend(t);
+////                conAvaiTimeRandRend(t);
+//            }
+//        }
     //    double sum = 0;
     //    for(int i = 1; i <= TOTAL_CHAN_NUM; i++){
     //        sum += 1.0*chanComAvaiCountSu0Su1[i]/chanAvaiCountSu0[i];
@@ -436,4 +503,5 @@ void MyNetwork::startSimulation()
     //    calAverConAvaiTime();
     //    printConAvaiTime();
     }
+    cout<<count1<<endl;
 }

@@ -63,14 +63,8 @@ int JsHop:: getChanAtTimeT(int t)
     return i;
 }
 
-JsHop returnOneJsHopObj()
+int JsHop:: getChanAtTimeT(int t, const vI &avai)
 {
-    JsHop ans;
-    return ans;
-}
-
-JsHop returnOneJsHopObj(int cur_chan_n)
-{
-    JsHop ans(cur_chan_n);
-    return ans;
+    curChan = getChanAtTimeT(t);
+    return curChan;
 }

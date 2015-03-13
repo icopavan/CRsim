@@ -24,7 +24,7 @@
 extern double totalAnswer1;
 extern double totalAnswer2;
 extern double totalAnswer3;
-
+extern double totalAnswer4;
 extern double total_cal;
 extern double total_mea;
 //template<typename T>
@@ -36,7 +36,7 @@ extern double total_mea;
 //}
 
 int main(int argc, const char * argv[]) {
-    totalAnswer1 = totalAnswer2 = totalAnswer3 = 0;
+    totalAnswer1 = totalAnswer2 = totalAnswer3 = totalAnswer4 = 0;
     for(int i = 1; i <= 1; i++){
 //        cout<<"#######################"<<endl;
         MyNetwork my;
@@ -44,9 +44,11 @@ int main(int argc, const char * argv[]) {
 //        cout<<"Time: "<<i<<endl;
 //        cout<<"#######################"<<endl<<endl;
     }
-    cout<<"Random rep rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-    cout<<"Pure random rend aver time:  "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
-    cout<<"Con avai time rend aver time: "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"JS rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"En JS rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"JS  rand rep rend aver time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"Con avai time  rend aver time:  "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"Pure rand rend aver time: "<<totalAnswer4/SIMULATION_REPEAT_TIME<<endl;
     return  0;
 }
 
