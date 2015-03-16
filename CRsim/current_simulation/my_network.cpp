@@ -39,7 +39,7 @@ void MyNetwork:: initAllSU()
 {
     for(int i = 0; i < 2; i++){
         MySU tmp;
-        tmp.location = make_pair(SIDE_LENGTH*(i+2) / 5.0, SIDE_LENGTH*(1)/2.0);
+        tmp.location = make_pair(SIDE_LENGTH*(i+1) / 3.0, SIDE_LENGTH*(i+1)/3.0);
         tmp.curSysTimeSlot = my_randint(1, 10000000);
         tmp.neighborPU.clear();
         tmp.chanHop = new JsHop();
@@ -443,6 +443,37 @@ void MyNetwork:: getCurConAvaiChan()
     printVector(ans);
 }
 
+const int AVAI_NUM = 15;
+const int CON_AVAI_NUM = 11;
+void MyNetwork:: calMaxProComAfterCut()
+{
+    SU &su0 = allSU[0];
+    SU &su1 = allSU[1];
+    int nc1, nc2, nc;
+    nc1 = (int)su0.avaiChan.size();
+    nc2 = (int)su1.avaiChan.size();
+    nc = (int)getComFromTwoVector(su0.avaiChan, su1.avaiChan).size();
+//    nc1 = 20;
+//    nc2 = 20;
+//    nc = 10;
+    double ans = 0;
+    int ansm = 0;
+    for(int m = 1; m <= nc; m++){
+        double p = 0;
+        for(int k = max(0, m-nc1+nc); k <= min(m, nc); k++){
+            p += k*myNchooseM(nc, k)*myNchooseM(nc, k)*myNchooseM(nc1-nc, m-k)*myNchooseM(nc2-nc, m-k);
+        }
+        p /= myNchooseM(nc1, m)*myNchooseM(nc2, m)*m;
+//        cout<<p<<endl;
+        if(p > ans){
+            ans = p;
+            ansm = m;
+        }
+    }
+    cout<<"nc1: "<<nc1<<"  nc2: "<<nc2<<" nc:"<<nc<<endl;
+    cout<<"Max number of chosen is: "<<ansm<<endl;
+}
+
 void MyNetwork::initSimulation()
 {
 //    cout<<"x = [";
@@ -466,24 +497,25 @@ void MyNetwork::startSimulation()
     for(int i = 0; i < SIMULATION_REPEAT_TIME; i++){
         initSimulation();
         START_REND_TIME = my_randint(TOTAL_TIME_SLOT/5, TOTAL_TIME_SLOT/2);
-        calChanEachTime();
-//        for(int t = 0; t < TOTAL_TIME_SLOT; t++){
-//            if(rendSuc1){ //&& rendSuc2 && rendSuc3 && rendSuc4){
-//                break;
-//            }
-//            getSUsCurAvaiChan(t);
+//        calChanEachTime();
+        for(int t = 0; t < TOTAL_TIME_SLOT; t++){
+            if(rendSuc1){ //&& rendSuc2 && rendSuc3 && rendSuc4){
+                break;
+            }
+            getSUsCurAvaiChan(t);
 //            getCurAllChanConAvaiTime();
-////            printTwoSUsConAvaiTime();
-//            if(t == TOTAL_TIME_SLOT-1){
-//            }
-//            if(t > START_REND_TIME){
+//            printTwoSUsConAvaiTime();
+            if(t == TOTAL_TIME_SLOT-1){
+            }
+            if(t > START_REND_TIME){
+                calMaxProComAfterCut();
 //                jumpStayRend(t);
-////                enhanceJumpStayRend(t);
-////                jsRadomRepRend(t);
-////                pureRandomRend(t);
-////                conAvaiTimeRandRend(t);
-//            }
-//        }
+//                enhanceJumpStayRend(t);
+//                jsRadomRepRend(t);
+//                pureRandomRend(t);
+//                conAvaiTimeRandRend(t);
+            }
+        }
     //    double sum = 0;
     //    for(int i = 1; i <= TOTAL_CHAN_NUM; i++){
     //        sum += 1.0*chanComAvaiCountSu0Su1[i]/chanAvaiCountSu0[i];
@@ -503,5 +535,5 @@ void MyNetwork::startSimulation()
     //    calAverConAvaiTime();
     //    printConAvaiTime();
     }
-    cout<<count1<<endl;
+//    cout<<count1<<endl;
 }

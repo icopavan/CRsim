@@ -56,6 +56,8 @@ public:
     void getCommonAvaiRatio();
     void printSimulationResults();
     void calChanEachTime();
+    void calMaxProComAfterCut();
+    
     MyNetwork();
     virtual void initSimulation();
     virtual void startSimulation();

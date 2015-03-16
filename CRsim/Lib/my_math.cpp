@@ -99,6 +99,7 @@ double disSquareTwoPoint(double x1, double y1, double x2, double y2)
 static double nChooseM[105][105] = {0};
 double myNchooseM(int n, int m)
 {
+    if(n < 0 || m < 0) return 0;
     if(m >= n) return 0;
     if(m == 0) return 1;
     if(m == 1) return n;
