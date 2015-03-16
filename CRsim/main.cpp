@@ -45,8 +45,10 @@ int main(int argc, const char * argv[]) {
 //        cout<<"#######################"<<endl<<endl;
     }
 //    cout<<"JS rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-//    cout<<"En JS rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-//    cout<<"JS  rand rep rend aver time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+    cout<<endl;
+    cout<<"En Js rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"JS con avai  time rend 1 aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+    cout<<"En JS con avai  time rend 2 aver time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<"Con avai time  rend aver time:  "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<"Pure rand rend aver time: "<<totalAnswer4/SIMULATION_REPEAT_TIME<<endl;
     return  0;

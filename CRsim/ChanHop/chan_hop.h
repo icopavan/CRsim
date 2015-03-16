@@ -26,6 +26,7 @@ public:
     virtual void init_seq();// Init the channel hopping sequence
     virtual int getChanAtTimeT(int t) = 0; //Get the channel to hop to at time t;
     virtual int getChanAtTimeT(int t, const vI &avai) = 0; //Get the channel to hop to at time t;
+    virtual int getChanAtTimeTBeforeReplace(int t) = 0;
 };
 
 #endif /* defined(__CRsim__chan_hop__) */

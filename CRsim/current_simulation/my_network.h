@@ -38,12 +38,15 @@ public:
     void initAllSuNeighbors();
     void jumpStayRend(int t);
     void enhanceJumpStayRend(int t);
+    void enhanceJumpStayConAvaiTimeRend(int t);
     void jsRadomRepRend(int t);
     void jsRandomRepRandomSenseRend(int t);
     void jsKeepRepRend(int t);
     void conAvaiTimeRend(int t);
     void conAvaiTimeRandRend(int t);
-    void jsConAvaiTimeRandRend(int t);
+    void jsConAvaiTimeRandRend0(int t);
+    void jsConAvaiTimeRandRend1(int t);
+    void jsConAvaiTimeRandRend2(int t);
     void pureRandomRend(int t);
     
     void getSUsCurAvaiChan(int t);

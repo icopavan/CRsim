@@ -68,3 +68,21 @@ int JsHop:: getChanAtTimeT(int t, const vI &avai)
     curChan = getChanAtTimeT(t);
     return curChan;
 }
+
+int JsHop:: getChanAtTimeTBeforeReplace(int t)
+{
+    int n = t / (3*P);
+    int i;
+    int r00 = (r0 + n - 1)%M + 1; //get the new r0
+    if(n < 2*P){
+        i = (i0 + n*r00 - 1) % P + 1;
+    }
+    else{
+        i = r00;
+    }
+    if(i > M){
+        i = (i-1)%M + 1;
+    }
+    curChan = i;
+    return i;
+}

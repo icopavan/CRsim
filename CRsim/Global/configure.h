@@ -14,4 +14,7 @@
 //#define SET_RANDOM_PU_PKT_LEN
 #define SET_STATIC_PU_PKT_LEN
 
+#define USE_DIFF_TRAFFIC_EACH_SIM
+#define USE_SAME_TRAFFIC_EACH_SIM
+
 #endif

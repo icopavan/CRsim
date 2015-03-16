@@ -65,3 +65,25 @@ int EnJsHop:: getChanAtTimeT(int t, const vI &avai)
     curChan  = j;
     return j;
 }
+
+int EnJsHop:: getChanAtTimeTBeforeReplace(int t)
+{
+    int j;
+    int n = t / (4*P);
+    int i00 = (i0 + n -1) % P + 1;// update the i0
+    t %= (4*P);
+    if(t < 3*P){
+        j = (i00 + t*r0 - 1) % P + 1;
+    }
+    else{
+        j = r0;
+    }
+    if(j > M){
+        j = (j-1)%M + 1;
+    }
+//    if(!vectorFind(avai, j)){
+//        j = avai[(j - 1) % avai.size()];
+//    }
+//    curChan  = j;
+    return j;
+}

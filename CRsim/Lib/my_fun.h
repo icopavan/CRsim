@@ -171,4 +171,26 @@ int vectorReverseSortedFind(const vector<T> &a, T x, int st, int ed)
     return ans;
 }
 
+template<class T>
+int arrayReverseSortedFind( T a[], T x, int st, int ed)
+{
+    int r = ed, l = st;
+    int ans = -1;
+    while(l <= r){
+        int mid = (l+r)>>1;
+        if(a[mid] == x){
+            ans = mid;
+            break;
+        }
+        else if(a[mid] > x){
+            l = mid + 1;
+        }
+        else{
+            r = mid - 1;
+        }
+    }
+    return ans;
+}
+
+
 #endif /* defined(__CRsim__my_fun__) */
