@@ -41,11 +41,17 @@ public:
     double transRange; //transmission range
     double transPower; //power,
     
+    int transSectorNum;
+    double transSectorAngle;
+    vector<pair<double, double> > sectorSplit;
+    vector<vI> sectorNeighborPU;
+    
     ChanHop *chanHop;
     
     void printPktInterval();
     void initAllPktArrivalTime(double arrRate);
     void initAllPkt(double arrRate, int pkt_max_len);
+    void initSectorSplit();
 };
 
 #endif /* defined(__CRsim__user__) */

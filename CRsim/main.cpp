@@ -36,19 +36,19 @@ extern double total_mea;
 //}
 
 int main(int argc, const char * argv[]) {
-    totalAnswer1 = totalAnswer2 = totalAnswer3 = totalAnswer4 = 0;
+    //totalAnswer1 = totalAnswer2 = totalAnswer3 = totalAnswer4 = 0;
     for(int i = 1; i <= 1; i++){
 //        cout<<"#######################"<<endl;
-        MyNetwork my;
-        my.startSimulation();
+//        MyNetwork my;
+//        my.startSimulation();
 //        cout<<"Time: "<<i<<endl;
 //        cout<<"#######################"<<endl<<endl;
     }
 //    cout<<"JS rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-    cout<<endl;
-    cout<<"En Js rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<endl;
+//    cout<<"En Js rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<"JS con avai  time rend 1 aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
-    cout<<"En JS con avai  time rend 2 aver time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
+//    cout<<"En JS con avai  time rend 2 aver time: "<<totalAnswer2/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<"Con avai time  rend aver time:  "<<totalAnswer3/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<"Pure rand rend aver time: "<<totalAnswer4/SIMULATION_REPEAT_TIME<<endl;
     return  0;

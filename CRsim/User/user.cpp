@@ -49,3 +49,20 @@ void User:: initAllPkt(double arrRate, int pkt_max_len)
 //    cout<<endl<<endl;
 //    printPktInterval();
 }
+
+void User:: initSectorSplit()
+{
+    sectorSplit.resize(transSectorNum + 2);
+    transSectorAngle = 360.0/transSectorNum/180 * PI;
+    double angle = 0;
+    for(int i = 0; i < transSectorNum; i++){
+        pair<double, double> pos;
+        pos = make_pair(100*cos(angle), 100*sin(angle));
+        angle += transSectorAngle;
+    }
+    sectorSplit[transSectorNum] = sectorSplit[0];
+    for(int i = 0; i <= transSectorNum; i++){
+        sectorSplit[i].first += location.first;
+        sectorSplit[i].second += location.second;
+    }
+}

@@ -27,6 +27,7 @@
 		2ACFCD3D1A37A923004929DE /* max_clique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD371A37A923004929DE /* max_clique.cpp */; };
 		2ACFCD3E1A37A923004929DE /* graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD391A37A923004929DE /* graph.cpp */; };
 		2ACFCD3F1A37A923004929DE /* max_flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFCD3A1A37A923004929DE /* max_flow.cpp */; };
+		2AE93A531AC1CE9C00C12515 /* sector_hop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AE93A511AC1CE9C00C12515 /* sector_hop.cpp */; };
 		2AFCEC6C1A09E08300E4C29E /* cognitive_radio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCEC6A1A09E08300E4C29E /* cognitive_radio.cpp */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		2ACFCD3A1A37A923004929DE /* max_flow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = max_flow.cpp; path = CRsim/Lib/Graph/max_flow.cpp; sourceTree = "<group>"; };
 		2ACFCD3B1A37A923004929DE /* max_flow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = max_flow.h; path = CRsim/Lib/Graph/max_flow.h; sourceTree = "<group>"; };
 		2ACFCD3C1A37A923004929DE /* graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graph.h; path = CRsim/Lib/Graph/graph.h; sourceTree = "<group>"; };
+		2AE93A511AC1CE9C00C12515 /* sector_hop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sector_hop.cpp; path = CRsim/ChanHop/sector_hop.cpp; sourceTree = "<group>"; };
+		2AE93A521AC1CE9C00C12515 /* sector_hop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sector_hop.h; path = CRsim/ChanHop/sector_hop.h; sourceTree = "<group>"; };
 		2AFCEC6A1A09E08300E4C29E /* cognitive_radio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cognitive_radio.cpp; path = CRsim/User/cognitive_radio.cpp; sourceTree = "<group>"; };
 		2AFCEC6B1A09E08300E4C29E /* cognitive_radio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cognitive_radio.h; path = CRsim/User/cognitive_radio.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +181,8 @@
 				2ABD8B1019E0FEA600EDC043 /* my_seq.h */,
 				2ABB98CE19E23A050093EEFD /* my_split_spec.cpp */,
 				2ABB98CF19E23A050093EEFD /* my_split_spec.h */,
+				2AE93A511AC1CE9C00C12515 /* sector_hop.cpp */,
+				2AE93A521AC1CE9C00C12515 /* sector_hop.h */,
 			);
 			name = ChanHop;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				2ACFCD3E1A37A923004929DE /* graph.cpp in Sources */,
 				2ABB98D019E23A050093EEFD /* my_split_spec.cpp in Sources */,
 				2AB3E20019E4FF2900FF9C39 /* my_network.cpp in Sources */,
+				2AE93A531AC1CE9C00C12515 /* sector_hop.cpp in Sources */,
 				2ABB98F419E2828C0093EEFD /* network.cpp in Sources */,
 				2ACFB6BB1A9DAC60002E399B /* channel.cpp in Sources */,
 				2ABB98CD19E239F80093EEFD /* user.cpp in Sources */,

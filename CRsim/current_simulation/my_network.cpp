@@ -35,19 +35,38 @@ MyNetwork:: MyNetwork() : CRNetwork()
     initAllSU();
 }
 
+void MyNetwork:: initSuNeighborSector(MySU &su)
+{
+    su.initSectorSplit();
+    su.sectorNeighborPU.resize(su.transSectorNum+2);
+    for(int i = 0; i < su.transSectorNum; i++){
+        for(int j = 0; j < PU_NUM; j++){
+            if(disSquareTwoPoint(su.location.first, su.location.second, allPU[j].location.first, allPU[j].location.second) <= SENSE_RANGE_SU * SENSE_RANGE_SU &&
+               pointInsideAngle(su.location, su.sectorSplit[i], su.sectorSplit[i+1], allPU[j].location)){
+                su.sectorNeighborPU[i].push_back(j);
+            }
+        }
+    }
+}
+
+void MyNetwork:: initSuNeighborPU(MySU &su)
+{
+    su.neighborPU.clear();
+    for(int j = 0; j < PU_NUM; j++){
+        if(disSquareTwoPoint(su.location.first, su.location.second, allPU[j].location.first, allPU[j].location.second) <= SENSE_RANGE_SU * SENSE_RANGE_SU){
+            su.neighborPU.push_back(j);
+        }
+    }
+}
+
 void MyNetwork:: initAllSU()
 {
     for(int i = 0; i < 2; i++){
         MySU tmp;
         tmp.location = make_pair(SIDE_LENGTH*(i+1) / 3.0, SIDE_LENGTH*(i+1)/3.0);
         tmp.curSysTimeSlot = my_randint(1, 10000000);
-        tmp.neighborPU.clear();
         tmp.chanHop = new JsHop();
-        for(int j = 0; j < PU_NUM; j++){
-            if(disSquareTwoPoint(tmp.location.first, tmp.location.second, allPU[j].location.first, allPU[j].location.second) <= SENSE_RANGE_SU * SENSE_RANGE_SU){
-                tmp.neighborPU.push_back(j);
-            }
-        }
+        initSuNeighborPU(tmp);
         for(int j = 1; j <= TOTAL_CHAN_NUM; j++){
             tmp.allChanObj[j].ID = j;
             tmp.allChanObj[j].ifAvai = 0;

@@ -34,8 +34,8 @@ public:
     virtual void initAllSU();
     void initSuChanHop();
     void initSuAvaiChan();
-    void initSuNeighbor(int _id);
-    void initAllSuNeighbors();
+    void initSuNeighborSector(MySU &su);
+    void initSuNeighborPU(MySU &su);
     void jumpStayRend(int t);
     void enhanceJumpStayRend(int t);
     void enhanceJumpStayConAvaiTimeRend(int t);
