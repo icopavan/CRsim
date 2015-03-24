@@ -10,6 +10,8 @@
 #define CRsim_global_h
 
 const int   TOTAL_CHAN_NUM  = 20; // total number of channels in the whole spectrum
+const int SEND_SECTOR_NUM = 4;
+const int REV_SECTOR_NUM = 5;
 const int   SU_NUM  = 2; //number of SUs
 const int   PU_NUM  = 20; //number of PUs
 const double PKT_ARR_RATE_PU = 4.8; // pu packet arrival rate
