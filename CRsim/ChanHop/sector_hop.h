@@ -15,18 +15,19 @@
 
 class SectorHop{
 public:
-    SEND_OR_RECEIVE role;
+    SEND_OR_RECEIVE sendOrRev;
     int sectorNum;
     int startIndex;
     int hopCount;
     int curIndex;
     
     int getIndexAtTimeT(int t);
-    int getNextIndex();
-    int senderGetNextIndex();
-    int receiverGetNextIndex();
+    int getCurIndex();
+    int senderGetCurIndex();
+    int receiverGetCurIndex();
     
     SectorHop(int n);
+    SectorHop(int n, SEND_OR_RECEIVE _role);
     SectorHop();
     
 };

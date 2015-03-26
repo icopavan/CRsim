@@ -10,7 +10,7 @@
 #define CRsim_global_h
 
 const int   TOTAL_CHAN_NUM  = 20; // total number of channels in the whole spectrum
-const int SEND_SECTOR_NUM = 4;
+const int SEND_SECTOR_NUM = 5;
 const int REV_SECTOR_NUM = 5;
 const int   SU_NUM  = 2; //number of SUs
 const int   PU_NUM  = 20; //number of PUs
@@ -33,7 +33,7 @@ const double PKT_ARR_RATE_SU = 10; // su packet arrival rate
 const int SIDE_LENGTH = 200; //area side length
 const int THETA_OF_SSL = 20;
 
-#define INT_MAX_VAL  2147483647
+int const INT_MAX_VAL = 2147483647;
 
 ///////////////////////////////////////////////////////////////////////////////////
 

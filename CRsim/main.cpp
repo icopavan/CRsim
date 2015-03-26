@@ -27,23 +27,20 @@ extern double totalAnswer3;
 extern double totalAnswer4;
 extern double total_cal;
 extern double total_mea;
-//template<typename T>
-//double aver(vector<T> x)
-//{
-//    double ans = 0;
-//    for(int i = 0; i < x.size(); i++) ans += x[i];
-//    return ans/x.size();
-//}
 
 int main(int argc, const char * argv[]) {
     //totalAnswer1 = totalAnswer2 = totalAnswer3 = totalAnswer4 = 0;
+//    cout<<"Aver time: "<<total0*1.0/rend_count0<<endl;
+//    cout<<"rend times: "<<rend_count0*100.0/simulation_times<<endl;
+//    cout<<"Aver time: "<<total1*1.0/rend_count1<<endl;
+//    cout<<"rend times: "<<rend_count1*100.0/simulation_times<<endl;
     for(int i = 1; i <= 1; i++){
 //        cout<<"#######################"<<endl;
-//        MyNetwork my;
-//        my.startSimulation();
-//        cout<<"Time: "<<i<<endl;
+        MyNetwork my;
+        my.startSimulation();
 //        cout<<"#######################"<<endl<<endl;
     }
+//    for(auto x: v) cout<<x<<' '; cout<<endl;
 //    cout<<"JS rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;
 //    cout<<endl;
 //    cout<<"En Js rend aver time: "<<totalAnswer1/SIMULATION_REPEAT_TIME<<endl;

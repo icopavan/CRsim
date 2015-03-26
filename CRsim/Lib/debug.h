@@ -15,6 +15,12 @@ void printArrayFrom0(int x[], int n);
 void printArrayFrom1(int x[], int n);
 
 template<class T>
+void printSingle(T x)
+{
+    cout<<"#x: "<<x<<endl;
+}
+
+template<class T>
 void printVector(vector<T> x)
 {
     if(x.size() <= 0){

@@ -10,13 +10,13 @@
 #define __CRsim__network__
 
 #include "include.h"
-#include "su.h"
+#include "my_su.h"
 #include "pu.h"
 #include "debug.h"
 
 class CRNetwork{
 public:
-    vector<SU> allSU;
+    MySU allSU[SU_NUM*2+2];
     vector<PU> allPU;
     int totalChanNum; //total number of channels;
     double simTime;

@@ -15,6 +15,14 @@ SectorHop:: SectorHop(int n)
     hopCount = 0;
 }
 
+SectorHop:: SectorHop(int n, SEND_OR_RECEIVE _role)
+{
+    sectorNum = n;
+    curIndex = startIndex = -1;
+    hopCount = 0;
+    sendOrRev = _role;
+}
+
 SectorHop:: SectorHop()
 {
     curIndex = startIndex = -1;
@@ -26,15 +34,15 @@ int SectorHop:: getIndexAtTimeT(int t)
     return 0;
 }
 
-int SectorHop:: senderGetNextIndex()
+int SectorHop:: senderGetCurIndex()
 {
-    if(curIndex == -1){
+    if(curIndex < 0 ){
         curIndex = startIndex = my_randint(0, sectorNum-1);
         hopCount = 1;
         return curIndex;
     }
     if(hopCount <= sectorNum*sectorNum){
-        if(hopCount % sectorNum == 1) curIndex += 2;
+        if(hopCount % sectorNum == 0) curIndex += 2;
         else curIndex++;
         hopCount++;
     }
@@ -43,14 +51,14 @@ int SectorHop:: senderGetNextIndex()
         hopCount++;
     }
     if(curIndex > sectorNum-1){
-        curIndex -= sectorNum-1;
+        curIndex -= sectorNum;
     }
     return curIndex;
 }
 
-int SectorHop:: receiverGetNextIndex()
+int SectorHop:: receiverGetCurIndex()
 {
-    if(curIndex == -1){
+    if(curIndex < 0){
         curIndex = startIndex = my_randint(0, sectorNum-1);
         hopCount = 1;
         return curIndex;
@@ -59,14 +67,14 @@ int SectorHop:: receiverGetNextIndex()
         curIndex++;
         hopCount++;
         if(curIndex > sectorNum-1){
-            curIndex -= sectorNum-1;
+            curIndex -= sectorNum;
         }
     }
     return curIndex;
 }
 
-int SectorHop:: getNextIndex()
+int SectorHop:: getCurIndex()
 {
-    if(role == SEND) return senderGetNextIndex();
-    else return receiverGetNextIndex();
+    if(sendOrRev == SEND) return senderGetCurIndex();
+    else return receiverGetCurIndex();
 }

@@ -14,6 +14,7 @@
 #include "my_math.h"
 #include "packet.h"
 #include "channel.h"
+#include "sector_hop.h"
 
 class User{
 public:
@@ -43,8 +44,11 @@ public:
     
     int transSectorNum;
     double transSectorAngle;
-    vector<pair<double, double> > sectorSplit;
-    vector<vI> sectorNeighborPU;
+    int curSectorID;
+    pair<double, double> sectorSplit[TOTAL_CHAN_NUM*2];
+    int sectorNeighborPU[35][PU_NUM+2];
+    int channelHopCount;
+    SectorHop *secHop;
     
     ChanHop *chanHop;
     

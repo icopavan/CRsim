@@ -29,13 +29,12 @@ public:
     int curResult2;
     int ifRendezvous1;
     int ifRendezvous2;
+    pair<int, int> rendPair;
     vector<MySU> jsSu;
     
     virtual void initAllSU();
     void initSuChanHop();
     void initSuAvaiChan();
-    void initSuNeighborSector(MySU &su);
-    void initSuNeighborPU(MySU &su);
     void jumpStayRend(int t);
     void enhanceJumpStayRend(int t);
     void enhanceJumpStayConAvaiTimeRend(int t);
@@ -60,6 +59,18 @@ public:
     void printSimulationResults();
     void calChanEachTime();
     void calMaxProComAfterCut();
+    
+    //considering directional antenna
+    void initAllSuSector();
+    void initSuNeighborSector(MySU &su);
+    void initSuNeighborPU(MySU &su);
+    void getAvaiChanEachSector(MySU &su, int t, int _sector);
+    void getRendPair(const MySU &su0, const MySU &su1);
+    void sectorRendOnly();
+    void initChannelAndSectorRend();
+    void channelAndSectorRend(int t);
+    void initChannelAndSectorRendRandom();
+    void channelAndSectorRendRandom(int t);
     
     MyNetwork();
     virtual void initSimulation();
